@@ -1,0 +1,56 @@
+.frame-box {
+	width:600px;
+}
+
+.calendar-box {
+	float:left;
+	width:300px;
+}
+
+.diary-box {
+	float:right;
+	margin-top:50px;
+	width:280px;
+}
+
+.diary_date {
+	font-size:9pt;
+}
+
+.calendar {
+	margin:4px;
+}
+
+.calendar * {
+	text-align:center;
+	font-size:18px;
+}
+
+.calendar table {
+	width:300px;
+	border:solid 1px #a9a9a9;
+}
+
+.calendar caption {
+	border:solid 1px #a9a9a9;
+	border-bottom:none;
+	background:#c0c0c0;
+}
+
+.calendar td.today {
+	background:#c0c0c0;
+}
+
+.calendar td {
+	width:70px;
+	height:40px;
+	border:solid 1px #a9a9a9;
+}
+
+.calendar .sat {
+	color:#1f6dff;
+}
+
+.calendar .sun {
+	color:#ff1f1f;
+}

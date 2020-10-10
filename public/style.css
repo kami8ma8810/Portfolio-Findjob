@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+html,
+body,
+div,
+header,
+section,
+p,
+span,
+form,
+button,
+ul,
+li,
+h1,
+h2,
+h3,
+dl,
+dt,
+dd {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	background-color: #fefefe;
+	color: #333333;
+	font-family: "Helvetica Neue",
+		Arial,
+		"Hiragino Kaku Gothic ProN",
+		"Hiragino Sans",
+		Meiryo,
+		sans-serif;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+	font-weight: normal;
+}
+
+h2,
+h3 {
+	margin: 16px 0 8px;
+}
+
+li {
+	color: #555555;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: #a26539;
+	text-decoration: none;
+}
+
+img {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	max-width: 100%;
+	vertical-align: bottom;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+sup {
+	font-size: smaller;
+}
+
+/* ヘッダー */
+.page-header {
+	padding: 16px 0;
+	border-bottom: 2px solid #555555;
+	text-align: left;
+	letter-spacing: 0.1em;
+	font-size: 16px;
+}
+
+.container {
+	margin: 0 auto;
+	width: 88%;
+}
+
+.section {
+	margin: 24px auto 48px;
+}
+
+.section-title {
+	padding-left: 12px;
+	border-left: 4px solid #555555;
+}
+
+.section-inner {
+	margin-top: 16px;
+	margin-left: 32px;
+}
+
+.works-list,
+.works-item dd,
+.skills-list,
+.about-list {
+	margin-left: 16px;
+}
+
+.works-list,
+.skills-list,
+.about-list {
+	margin-top: 16px;
+}
+
+.works-item {
+	margin-top: 16px;
+}
+
+.works-item dd {
+	margin-top: 4px;
+	color: #555555;
+}
+
+.works-note {
+	margin-top: 32px;
+	font-size: 12px;
+}
+
+.skills-item,
+.about-item {
+	margin-top: 8px;
+}
+
+/* フッター */
+.page-footer {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	-ms-flex-align: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	padding: 16px 0;
+	border-top: 2px solid #555555;
+	text-align: center;
+	letter-spacing: 0.1em;
+	font-size: 14px;
+}
+
+.profile-img {
+	margin: 0 0 0 8px;
+	width: 48px;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 650px) {
+	.page-header {
+		font-size: 1.2rem;
+	}
+
+	.head {
+		font-size: 1.4rem;
+	}
+
+	.main-container {
+		margin: 4em 1em;
+	}
+}
+
+/*# sourceMappingURL=style.css.map */

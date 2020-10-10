@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="touch-icon.png">
+  <title>Hayato's Portfolio</title>
+  <meta name="description" content="ポートフォリオサイトです。">
+  <meta name="keywords" content="ポートフォリオ,サイト,portfolio,site">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/responsive.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/slick/slick.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/slick/slick-theme.css" media="screen">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="css/slick/slick.min.js"></script>
+</head>
+
+<body id="top" class="scrollArea">
+  <header class="header">
+    <div class="container">
+      <div class="header-fixed">
+        <div class="header-inner"> <a href="#"><img class="header-logo" src="images/logo.png"></a>
+          <button class="hamburger" id="mobile-btn"></button>
+        </div>
+        <nav id="nav">
+          <div class="=nav-container">
+            <ul class="navbar" id="nav-menu">
+              <li class="nav-item"><a href="#">TOP</a></li>
+              <li class="nav-item"><a href="#about">ABOUT</a></li>
+              <li class="nav-item"><a href="#works">WORKS</a></li>
+              <li class="nav-item"><a href="#skills">SKILLS</a></li>
+              <li class="nav-item"><a href="#contact">CONTACT</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <h1 class="site-title">Hayato's Portfolio Website</h1>
+      <p class="site-discription">Welcome!</p>
+    </div>
+  </header>
+  <div class="container">
+    <main>
+      <section class="about" id="about">
+        <h2 class="heading">ABOUT</h2>
+        <p class="about-text"> はじめまして。未経験からWebデザイナー/コーダーの勉強をしています。<br>
+          WebのスクールでHTML、CSS、Illustrator、Photoshopについて学び、その後は独学で学んでいます。<br>
+          現在はデザイン理論、JavaScript（jQuery）、Bootstap、WOREPRESSを勉強中です。<br>
+          Webの力で世の中を便利に楽しくさせたいです。</p>
+      </section>
+      <section class="works" id="works">
+        <h2 class="heading">WORKS</h2>
+        <div class="works-wrapper">
+          <div class="work-box"><img class="work-image" src="images/bn05.jpg" alt="制作事例1" />
+            <p class="work-text">制作事例1<br>
+              <a href="https://hayato1207.portfoliobox.net/" target="_blank" class="button">READ MORE</a></p>
+          </div>
+          <div class="work-box"><img class="work-image" src="images/bn02.jpg" alt="制作事例2" />
+            <p class="work-text">制作事例2<br>
+              <a href="https://hayato1207.portfoliobox.net/" target="_blank" class="button">READ MORE</a></p>
+          </div>
+          <div class="work-box"><img class="work-image" src="images/bn03.jpg" alt="制作事例3" />
+            <p class="work-text">制作事例3<br>
+              <a href="https://hayato1207.portfoliobox.net/" target="_blank" class="button">READ MORE</a></p>
+          </div>
+          <div class="work-box"><img class="work-image" src="images/bn06.jpg" alt="制作事例4" />
+            <p class="work-text">制作事例4<br>
+              <a href="https://hayato1207.portfoliobox.net/" target="_blank" class="button">READ MORE</a></p>
+          </div>
+        </div>
+      </section>
+      <section class="skills" id="skills">
+        <h2 class="heading">SKILLS</h2>
+        <div class="skills-wrapper">
+          <div class="skill-box"> <i class="skill-icon far fa-lightbulb"></i>
+            <div class="skill-title">IDEA</div>
+            <p class="skill-text"> P（計画）D（実行）C（評価）A（改善）サイクルを基に、直感的、客観的なアイデアを出していきます。 </p>
+          </div>
+          <div class="skill-box"> <i class="skill-icon fas fa-pencil-alt"></i>
+            <div class="skill-title">DESIGN</div>
+            <p class="skill-text"> 形の美しさ、色の配色、に重きを置きながら、<br>
+              使いやすさ、伝わりやすさなど、UDを意識しています。<br>
+              ワクワクする、癒される、そんなデザインが目標です。 </p>
+          </div>
+          <div class="skill-box"> <i class="skill-icon fas fa-code"></i>
+            <div class="skill-title">CODING</div>
+            <p class="skill-text"> HTML/CSSコーディングも行います。<br>
+              JavaScript,jQueryを用いた動きのあるコーディング、<br>
+              スマホ、タブレット対応のレスポンシブ化も行います。 </p>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <h2 class="heading">CONTACT</h2>
+        <form class="contact-form">
+          <input type="text" name="name" placeholder="Name お名前を入力してください">
+          <textarea name="message" placeholder="Message メッセージを入力してください"></textarea>
+          <input type="submit" value="SEND">
+        </form>
+      </section>
+    </main>
+  </div>
+  <div class="container">
+    <footer class="footer">
+      <p><small>&copy; Hayato Kamiyama</small></p>
+    </footer>
+  </div>
+  <script src="lib/placeholders.min.js"></script>
+  <script src="script/script.js"></script>
+</body>
+
+</html>

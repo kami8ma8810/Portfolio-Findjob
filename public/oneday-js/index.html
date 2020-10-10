@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   <meta name="robots" content="noindex" />
+  <meta name="format-detection" content="telephone=no,address=no,email=no" />
+  <title>たった１日で基本が身に付く！JavaScript超入門</title>
+  <!-- css -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css" />
+  <link rel="stylesheet" href="normalize.css" />
+  <link rel="stylesheet" href="atomtheme.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="page-header-wrap">
+      <div class="balloon-0">
+        <p>たった</p>
+      </div>
+      <h1 class="page-header__title">１日で基本が身に付く！JavaScript<br><span>超入門</span></h1>
+    </div>
+  </header>
+  <main class="main-contents">
+    <section class="intro" id="intro">
+      <h1 id="intro_head">はじめに</h1>
+      <p style="margin-top: 1em;">
+        ここは「たった１日で基本が身に付く！JavaScript超入門」という書籍を通して学んだことをまとめたページです。
+      </p>
+      <div class="intro_book">
+        <p class="intro_book_img">
+          <img src="images/book_oneday.jpg" alt="たった１日で基本が身に付く！JavaScript超入門" />
+        </p>
+        <cite>画像出典：<a href="https://gihyo.jp/book/2017/978-4-7741-8995-6" target="blank"
+            rel="noopener">たった1日で基本が身に付く！シリーズ
+            たった1日で基本が身に付く！
+            JavaScript超入門</a></cite>
+      </div>
+      <p style="margin-top: 1em;">
+        この本は次の大きく８項目で構成されていますが、下記の赤字の項目のみまとめました。
+      </p>
+      <hr>
+      <ul class="intro_list">
+        <li class="intro_list">CHAPTER1 環境設定</li>
+        <li class="intro_list-red">CHAPTER2 JavaScriptの基本的な文法</li>
+        <li class="intro_list">CHAPTER3 よく利用される変数や処理の扱い</li>
+        <li class="intro_list-red">CHAPTER4 HTMLを操作する</li>
+        <li class="intro_list-red">CHAPTER5 イベントを扱う</li>
+        <li class="intro_list-red">CHAPTER6 Web APIを利用する</li>
+        <li class="intro_list-red">CHAPTER7 日記アプリを作成する</li>
+        <li class="intro_list-red">CHAPTER8 さらに開発を進めるために</li>
+      </ul>
+    </section>
+
+    <section id="sentence">
+      <h1>javascriptの基本的な文法</h1>
+      <h2>組み込みオブジェクト</h2>
+      <p>組み込みオブジェクトは、JavaScriptで扱う基本的な部品。</p>
+      <h3>組み込みオブジェクトの主な種類</h3>
+      <dl>
+        <dt>String</dt>
+        <dd>文字列を管理する</dd>
+        <dt>Number</dt>
+        <dd>数値を管理する</dd>
+        <dt>Boolean</dt>
+        <dd>true/falseの真偽値を管理</dd>
+        <dt>Array</dt>
+        <dd>配列を管理</dd>
+        <dt>Date</dt>
+        <dd>日時を管理</dd>
+        <dt>JSON</dt>
+        <dd>JSON形式データを扱う</dd>
+      </dl>
+      <h3>組み込みオブジェクト記述例</h3>
+      <pre><code class="javascript">
+     //文字列型の変数を宣言
+     var str = 'JavaScriptを始めよう！';
+     //文字列の長さを参照
+     console.log(str.length);
+
+     //Date型の変数を宣言
+     var date = new Date();
+     //現在の日付日時を出力
+     console.log(date.toLocaleDateString());
+    </code></pre>
+    </section>
+    <!----------------------HTMLを操作する---------------------->
+    <section id="html-use">
+      <h1>HTMLを操作する</h1>
+      <h2>要素の属性を取得・変更する</h2>
+      <pre><code class="javascript">
+   var input = document.getElementById("inputText");
+   console.log(input.getAttribute("value")); //出力結果「サンプル」
+   console.log(input.value); //出力結果「サンプル」
+
+   //要素のvalueを変更
+   input.value = "変更しました";
+
+   console.log(input.getAttribute("value")); //出力結果「変更しました」
+   console.log(input.value); //出力結果「変更しました」
+
+
+   //属性を削除するときは、removeAttribute() を使用する。
+    </code></pre>
+      <dl>
+        <dt>getAttribute</dt>
+        <dd>属性の値を取得する</dd>
+        <dt>setAttribute</dt>
+        <dd>属性の値を変更する</dd>
+      </dl>
+      <h2>textContentとinnerHTMLの使い分け</h2>
+      <dl>
+        <dt>textContent</dt>
+        <dd>内容が文字列のみの場合</dd>
+        <dt>innerHTML</dt>
+        <dd>内容にHTMLを含める場合</dd>
+      </dl>
+      <div>
+        <h2>textContentの利用例</h2>
+        <p id="changeText">このテキストが変わります</p>
+        <input type="button" id="textChangeBtn" value="テキストを書き換える" />
+      </div>
+      <div>
+        <h2>innerHTMLの利用例</h2>
+        <div id="changeImg">
+          <p>昨日のネコ</p>
+          <img src="images/cat_1.jpg" alt="" />
+          <div>
+            <input type="button" id="imgChangeBtn" value="HTMLを書き換える" />
+          </div>
+        </div>
+      </div>
+      <p>
+        HTMLを文字列として扱うことを<span class="typo-red">「HTMLをエスケープする」</span>という。
+      </p>
+      <p>
+        ※innerHTMLで埋め込みすぎると脆弱性の原因にもなるので、文字だけならtextContentを使う。
+      </p>
+
+    </section>
+
+    <h2>イベントの種類</h2>
+    <dl>
+      <dt>イベントハンドラー</dt>
+      <dd>イベントと１対１で定義</dd>
+      <dd>要素内のタグ内or要素オブジェクトのプロパティで定義</dd>
+      <dt>イベントリスナー</dt>
+      <dd>
+        イベントとは１対１以上（１つのイベントに対して複数の処理）で「定義可能
+      </dd>
+      <dd>要素オブジェクトのaddEventListenerメソッドで定義</dd>
+    </dl>
+    <h3>イベントハンドラ記述例（要素のタグ内）</h3>
+    <pre><code class="html">
+    ＜input type="button" value="クリック！" onclick="buttonClick();"＞
+    </code></pre>
+    <pre><code class="javascript">
+      function buttonClick() {
+
+        window.alert('クリックしました！');
+      };
+    </code></pre>
+    <h3>イベントハンドラ記述例（要素オブジェクトのプロパティとして）</h3>
+    <pre><code class="html">
+    ＜input type="button" id="btn" value="クリック！"＞
+    </code></pre>
+    <pre><code class="javascript">
+      window.onload = function () {
+
+        var btn = document.getElementById("btn");
+
+        btn.onclick = function () {
+
+          window.alert("クリックしました！");
+        };
+      };
+    </code></pre>
+    <p>
+      ※ページの読み込みが完了する前にdocument.getElementByIdで取得しようとするとエラーが発生する。そのためwindowオブジェクトのloadイベントの中に記述している。
+    </p>
+    <h3>イベントリスナー記述例</h3>
+    <pre><code class="html">
+    ＜input type="button" id="btn" value="クリック！"＞
+    </code></pre>
+    <pre><code class="javascript">
+      window.addEventListener("DOMContentLoaded", function(){
+        var button = document.getElementById("button");
+
+        button.addEventListener("click", function(){
+          window.alert("クリックしました！");
+        });
+
+        button.addEventListener("click", function(){
+          window.alert("もう一度アラートを出します！");
+        });
+      });
+    </code></pre>
+    <p>
+      ※ページの読み込みが終わったときに全体の処理を開始するのが、windowオブジェクトの"DOMContentLoaded"イベント。
+    </p>
+    <h3>イベントをキャンセルするpreventDefaultメソッド記述例</h3>
+    <p>本来Googleのサイトに飛ぶ所をキャンセルする場合</p>
+    <pre><code class="html">
+      ＜a href="http://www.google.co.jp"＞サイトへ＜/a＞
+    </code></pre>
+    <pre><code class="javascript">
+      window.addEventListener("DOMContentLoaded", function(){
+        var link = document.getElementById("link");
+
+        link.addEventListener("click", function(event){
+          event.preventDefault();
+          window.alert("リンクがクリックされました！");
+        });
+      });
+    </code></pre>
+    <h2>イベントを利用して動的に画面を変更する</h2>
+    <h3>mouseover・mouseoutイベント</h3>
+    <div class="balloon-1">
+      <p>マウスホバーするにゃ</p>
+    </div>
+    <p><img id="catImg" src="images/cat_1.jpg" /></p>
+    <pre><code class="javascript">
+      window.addEventListener("DOMContentLoaded", function () {
+        var image = document.getElementById("catImg");
+
+        // マウスオーバー時
+        image.addEventListener("mouseover", function () {
+          this.src = "images/cat2.jpg";
+        });
+
+        // マウスアウト時
+        image.addEventListener("mouseout", function () {
+          this.src = "images/cat1.jpg";
+        });
+      });
+    </code></pre>
+    <h3>動的にUIを制御する</h3>
+    <p>選択するセレクトボックスによって項目が変わる</p>
+    <select id="area">
+      <option value="">選択してください</option>
+      <option value="0">北海道・東北地方</option>
+      <option value="1">関東地方</option>
+      <option value="2">中部地方</option>
+      <option value="3">近畿地方</option>
+      <option value="4">中国地方</option>
+      <option value="5">四国地方</option>
+      <option value="6">九州・沖縄地方</option>
+    </select>
+    <!----------------------------------section 地方選択---------------------------------->
+    <select id="pref">
+      <option value="">地方を選択してください</option>
+      <pre><code class="javascript">
+        window.addEventListener("DOMContentLoaded", function () {
+
+         // セレクトボックスのオブジェクトを取得
+          var areaSelect = document.getElementById("area");
+          var prefSelect = document.getElementById("pref");
+
+         // 地方以下の都道府県の配列
+          var prefList = [
+          ["北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島"],
+          ["東京", "茨城", "栃木", "群馬", "埼玉", "千葉", "神奈川"],
+          ["新潟", "富山", "石川", "福井", "山梨", "長野", "岐阜", "静岡", "愛知"],
+          ["京都", "大阪", "三重", "滋賀", "兵庫", "奈良", "和歌山"],
+          ["鳥取", "島根", "岡山", "広島", "山口"],
+          ["徳島", "香川", "愛媛", "高知"],
+          ["福岡", "佐賀", "長崎", "大分", "熊本", "宮崎", "鹿児島", "沖縄"]
+          ];
+
+         // 地方のセレクトボックスが選択された際の処理
+          areaSelect.addEventListener("change", function () {
+
+            // 都道府県のセレクトボックスを空にする
+            prefSelect.innerHTML = "";
+
+            // 「選択してください」が選択された際は処理をここれ中断
+            if (this.value == "") return;
+
+            // 選択した地方以下の都道府県のリスト
+            var list = prefList[this.value];
+
+            // 都道府県のリストから選択項目を作成
+            for (var i = 0; i ＜ list.length; i++) {
+              var option=document.createElement('option');
+              option.value=i;
+              option.text=list[i];
+              prefSelect.appendChild(option);
+            }
+          });
+        });
+      </code></pre>
+    </select>
+    <!----------------------------------section Web API---------------------------------->
+    <section>
+      <h1>Web API</h1>
+      <dl>
+        <dt>APIとは</dt>
+        <dd>Application Programming Interface</dd>
+        <dd>
+          プログラムが持っていない外部の機能やデータを呼び出して利用できるようにする仕組みの総称。インターネット経由で利用できるものをWeb
+          APIという。
+        </dd>
+      </dl>
+      <h2>主なWeb API</h2>
+      <ul>
+        <li>Twitter API…ユーザー認証、ツイート、フォロー</li>
+        <li>YouTube Data API…動画のアップロードや検索</li>
+        <li>ぐるなび API…飲食店や口コミの検索</li>
+      </ul>
+      <h2>Web APIで利用される主なデータ形式</h2>
+      <ul>
+        <li>XML…利用者が独自のタグを指定できるマークアップ言語の形式</li>
+        <li>RSS…サイトの更新情報などを簡単にまとめたXMLの形式</li>
+        <li>JSON…JavaScriptのオブジェクト表記構文でデータを記述する形式</li>
+        <li>CSV…データを「,(カンマ)」で区切った形式</li>
+      </ul>
+      <h4>JSON Viewer</h4>
+      <p>Chromeの拡張機能にJSONを見やすくするJSON Viewerがある。</p>
+      <p>
+        <a href="https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=ja"
+          target="_blank" rel="noopener">JSON
+          Viewer</a>
+      </p>
+      <h2>画像検索アプリの作成</h2>
+      <p>Flickr APIを利用して画像検索アプリを作成してみる。</p>
+      <p><a href="flickr.html">DEMOデモページへ</a></p>
+      <pre><code class="html">
+入力欄      ＜input type="text" id="keyword" name="keyword"＞
+検索ボタン  ＜input type="button" id="button" value="検索"＞
+画像表示欄  ＜div id="photo_list"＞＜/div＞</code></pre>
+
+      <pre><code class="javascript">
+
+//ページ読み込み時に処理
+window.addEventListener("DOMContentLoaded", function(){
+  var button = document.getElementById('button');
+
+  // ボタンクリック時の処理
+  button.addEventListener("click", function(){
+
+    // 入力欄からキーワードを取得
+    var input  = document.getElementById("keyword");
+    var keyword = input.value
+
+    // scriptタグを生成
+    var script = document.createElement('script');
+    // srcにFlickr APIのURLを指定して検索キーワードをURLエンコードしてtagsパラメーターに指定
+    script.src="https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=" + encodeURIComponent(keyword);
+    // Flickr APIの呼び出し
+    document.body.appendChild(script);
+    // 呼び出した後にscriptタグを削除
+    document.body.removeChild(script);
+  });
+});
+
+
+//戻り値の関数名が「jsonFlickrFeed」なので、jsonFlickrFeedで関数を作成して処理する
+// JSONデータを受け取る関数
+function jsonFlickrFeed(data) {
+
+// 結果表示領域をクリア
+  var photo_list = document.getElementById("photo_list");
+  photo_list.innerHTML = "";
+
+  // itemsキーで検索結果を取得
+  for (i=0;i＜data.items.length;i++){
+
+    // 検索結果内の画像情報を取得
+    var item = data.items[i];
+
+    // img要素を生成
+    var img = document.createElement("img");
+
+    // img要素のsrcに検索結果の画像のURLを指定
+    img.src = item.media.m;
+    photo_list.appendChild(img);
+  }
+}
+  </code></pre>
+      <h3>Web APIとオープンデータ</h3>
+      <p>
+        Web APIのように外部に機能を公開する仕組みの一つに<span class="typo-red">オープンデータ</span>がある。
+      </p>
+      <dl>
+        <dt>オープンデータ</dt>
+        <dd>
+          組織や業界内だけで利用してきたデータを整備して、誰でも利用できるように公開する仕組み。
+        </dd>
+      </dl>
+      <p>
+        <a href="https://developer.tokyometroapp.jp/info">東京メトロオープンデータ開発者サイト</a><br />※利用にはユーザ登録が必要です。
+      </p>
+      <p>
+        <a href="http://awards.tokyometroapp.jp/">オープンデータ活用コンテスト | 東京メトロ 10th
+          anniversary</a><br />オープンデータを利用して作成したアプリなどが見られます。
+      </p>
+      <p>
+        上記サイトで紹介されているアプリのように、複数のWeb
+        APIやオープンデータを組み合わせて利用することを<span class="typo-red">マッシュアップ</span>という。
+      </p>
+    </section>
+    <!----------------------------------section diary---------------------------------->
+
+    <section id="diary">
+      <h1>日記アプリの作成</h1>
+      <p><a href="calendar.html">DEMOページへ</a></p>
+      <h2>何が必要か？</h2>
+      <ul>
+        <li>日記の保存</li>
+        <li>日記の呼び出し</li>
+        <li>カレンダーの表</li>
+      </ul>
+      <h2>データを保存する</h2>
+      <p>
+        JavaScriptにはキーと値のペアの形式でブラウザにテキストデータを保存できる<span class="typo-red">WebStorage</span>という仕組みがある。
+      </p>
+      <p>
+        WebStorageは「クッキー」のようなもの。クッキーは4KBまでで、データの有効期限がある。
+      </p>
+      <dl>
+        <dt>WebStorageの種類</dt>
+        <dd>sessionStorage…ウィンドウやタブを閉じるまで有効。5~10MB</dd>
+        <dd>localStorage…永続的に有効。5~10MB</dd>
+      </dl>
+      <p>今回の日記アプリではlocalStorageを利用する。</p>
+      <h3>localStorage記述例</h3>
+      <pre><code class="javascript">
+        //==========データの保存・参照==========
+        //localStorageを利用
+        var storage = localStorage;
+
+        //storageキー「foo」で「bar」を保存
+        storage.setItem("foo", "bar");
+        // 次の書き方でも同じ
+        //storage.foo="bar";
+        //storage.["foo"]="bar";
+
+        //保存したデータを参照
+        console.log(storage.getItem("foo"));
+        // 次の書き方でも同じ
+        //console.log(storage.foo);
+        //console.log(storage["foo"]);
+
+        //==========保存したデータの削除==========
+        // localStorageを利用
+        var storage = localStorage;
+        // storageにキー：foo で bar を保存
+        storage.setItem("foo", "bar");
+        // 次の書き方でも同じ
+        //storage.foo = "bar";
+        //storage["foo"] = "bar";
+
+        // データを削除
+        storage.removeItem("foo");
+
+        // 保存したデータを参照
+        console.log(storage.getItem("foo"));
+        // 次の書き方でも同じ
+        //console.log(storage.foo);
+        //console.log(storage["foo"]);
+      </code></pre>
+      <h2>日付の処理</h2>
+      <p>日付の処理はDateオブジェクトを利用する。</p>
+      <p>Dateオブジェクト記述例（指定した日付を取得）</p>
+      <pre><code class="javascript">
+        // 日付オブジェクトのインスタンスを 2020/12/7 の日付で生成
+        var date = new Date(2020, 12, 7);
+
+        // 日にちを1日にセット
+        date.setDate(1);
+
+        // 年月日を取得
+        var year = date.getFullYear();
+
+        //月は0~11で扱うから+1する
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        // 取得した曜日を漢字の曜日に置き換える
+        var weekdays = ["日", "月", "火", "水", "木", "金", "土"];
+        var weekday = weekdays[date.getDay()];
+        var str = "今日は" + year + "年" + month + "月" + day + "日(" + weekday + ") です";
+        console.log(str);
+      </code></pre>
+      <p class="typo-red">
+        ※getMonth(),setMonth(month)は月を1~12ではなく0~11で扱う。
+      </p>
+      <h2>カレンダーに日記機能をつける</h2>
+      <p><a href="calendar_diary.html">デモページへ</a></p>
+    </section>
+    <!----------------------------------section study---------------------------------->
+    <section id="study">
+      <h1>さらに開発を進めるためにやること</h1>
+      <h2>JavaScriptを一人で練習する</h2>
+      <h3>お手本を見ながらプログラムを作れる W3Schools</h3>
+      <dl>
+        <dt>
+          <a href="https://www.w3schools.com/" target="_blank" rel="noopener">W3Schools</a>
+        </dt>
+      </dl>
+      <dd>
+        ノルウェーのRefsnes Data社が運営するオンラインのプログラム学習サイト。
+      </dd>
+      <dd>
+        HTML,CSS,JavaScriptだけでなく、PHP,SQL,Sass,Bootstrapなどのコンテンツもある。
+      </dd>
+      <p class="study__img"><img src="images/w3.JPG" alt="W3Schools" /></p>
+
+      <h3>実践的なプログラムを作成する jsdo.it</h3>
+      <p>
+        jsdo.itはW3Schoolsと同じようにブラウザ上でJavaScriptを学べるサイト。
+      </p>
+      <p class="typo-red">※jsdo.itは 2019/10/31 を持ちまして終了いたしました。</p>
+      <p class="study__img"><img src="images/jsdoit.JPG" alt="jsdo.it" /></p>
+      <h2>jQueryのプラグインを利用する</h2>
+      <dl>
+        <dt>jQueryプラグインとは</dt>
+        <dd>jQueryの機能を拡張するためのライブラリのこと。</dd>
+      </dl>
+      <p>
+        <a href="https://plugins.jquery.com/" target="_blank" rel="noopener">jQuery公式サイト（プラグイン）</a>
+      </p>
+
+      <h3>スライダーを簡単に実装できる slick</h3>
+      <p><a href="slick/index.html">slickデモページ</a></p>
+      <p> <a href="https://kenwheeler.github.io/slick/" rel="noopener" target="_blank">slick公式サイト</a></p>
+
+      <h3>レスポンシブデザインに対応したメニューを作成 MeanMenu</h3>
+      <p><a href="meanmenu/meanMenu.html" rel="noopener" target="_blank">MeanMenuデモページ</a>
+      </p>
+      <p><a href="https://www.meanthemes.com/plugins/meanmenu/" rel="noopener" target="_blank">MeanMenu公式サイト</a></p>
+
+    </section>
+    <section id="matome" class="matome">
+      <h1>まとめ</h1>
+      <p>この本では仕組みなどを理解するというよりは、実際に色々コードを書いて動かしましょうという内容が多いです。読み通すだけなら1日で終わりますが、「なぜそのように動くのか？」などを理解するのは１日では終わりません。</p>
+      <p>「とりあえずJavaScriptがどんなものなのか知りたい」という方におすすめです。</p>
+      <p>日記アプリの制作は「JavaScriptを使って何かを作る」という面では良かったです。ただ私を含め、初学者にはちょっとハードルが高いかなと感じました。ツールやアプリ系の開発はドットインストールの方がわかりやすいと思います。
+      </p>
+      <p>JavaScriptだけでなくWeb系の勉強全般に言えることだと思いますが、一番良いのは「自分が作りたいもの」を作ることだと思います。其のために必要なイベントが出てきたらその都度調べる、みたいなやり方が良いと思います。
+      </p>
+      <p>私もJavaScriptはまだまだ理解できていないので、精進して参りたいと思います。</p>
+      <p>最後まで読んでいただきありがとうございました。<br>m(_ _)m</p>
+    </section>
+  </main>
+  <footer class="page-footer">
+    <p class="cite">
+      参考文献：<cite>WINGS プロジェクト 片渕彼富『たった１日で基本が身に付く！JavaScript超入門』初版 株式会社技術評論社
+        2017年</cite>
+    </p>
+    <small>&copy;2020 Hayato Kamiyama</small>
+  </footer>
+  <!-- js -->
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+  <script src="highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

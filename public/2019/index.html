@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="touch-icon.png">
+  <title>hayato's portfolio site</title>
+  <meta name="description" content="神山勇人 Hayato Kamiyama のポートフォリオサイトです。Web業界への転職のために制作物の紹介や自己紹介を行っておりります。">
+  <meta name="keywords" content="ポートフォリオ,サイト,ポートフォリオサイト,portfolio,site">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:site_name" content="hayato's portfolio site" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@ユーザー名" />
+  <meta property="og:url" content="記事のURL" />
+  <meta property="og:image" content="画像のURL" />
+  <meta property="og:title" content="Hayato's Portfolio Site" />
+  <meta property="og:description" content="神山勇人 Kamiyama Hayatoのポートフォリオサイトです。" />
+
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/zdo_drawer_menu.css">
+  <link rel="stylesheet" href="./css/swiper.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body id="top">
+
+  <!-- ローディングアニメーション -->
+  <div class="loader-wrap">
+    <div class="sk-fading-circle">
+      <div class="sk-circle1 sk-circle"></div>
+      <div class="sk-circle2 sk-circle"></div>
+      <div class="sk-circle3 sk-circle"></div>
+      <div class="sk-circle4 sk-circle"></div>
+      <div class="sk-circle5 sk-circle"></div>
+      <div class="sk-circle6 sk-circle"></div>
+      <div class="sk-circle7 sk-circle"></div>
+      <div class="sk-circle8 sk-circle"></div>
+      <div class="sk-circle9 sk-circle"></div>
+      <div class="sk-circle10 sk-circle"></div>
+      <div class="sk-circle11 sk-circle"></div>
+      <div class="sk-circle12 sk-circle"></div>
+    </div>
+  </div>
+
+  <!---------- ハンバーガーナビゲーション ---------->
+
+  <div class="zdo_drawer_menu">
+    <!--
+		Zarigani Design Office Drawer Menu
+		Copyright 2018 Zarigani Design Office
+
+		Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+		The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+		THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+		-->
+    <div class="zdo_drawer_bg"></div>
+    <button type="button" id="nav_appear" class="zdo_drawer_button">
+      <span class="zdo_drawer_bar zdo_drawer_bar1"></span>
+      <span class="zdo_drawer_bar zdo_drawer_bar2"></span>
+      <span class="zdo_drawer_bar zdo_drawer_bar3"></span>
+      <span class="zdo_drawer_menu_text zdo_drawer_text">menu</span>
+      <span class="zdo_drawer_close zdo_drawer_text">close</span>
+    </button>
+    <nav class="zdo_drawer_nav_wrapper">
+      <ul class="zdo_drawer_nav">
+        <li><a href="#works">works</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+
+  <!---------- オールコンテンツ ---------->
+
+  <div id="scroll-wrap" class="scroll-wrap">
+    <div class="container header-container">
+      <header>
+
+        <!---------- ヘッダーナビゲーション ---------->
+
+        <nav id="nav-menu" class="nav-container">
+          <ul class="navbar">
+            <li class="nav-item site-title"><a href="#">hayato's portfolio web site</a></li>
+            <li class="nav-item nav-active"><a href="#works">works</a></li>
+            <li class="nav-item nav-active"><a href="#skills">skills</a></li>
+            <li class="nav-item nav-active"><a href="#about">about</a></li>
+            <li class="nav-item nav-active"><a href="#contact">contact</a></li>
+          </ul>
+        </nav>
+
+        <section id="keyvisual" class="keyvisual">
+          <h1>
+            <div class="svg">
+              <svg version="1.1" id="my_svg" class="my_svg" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080" style=""
+                xml:space="preserve">
+                <style type="text/css">
+                  .st0 {
+                    fill: none;
+                    stroke: #e7e7e7;
+                    stroke-width: 20;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-miterlimit: 10;
+                  }
+                </style>
+                <path class="st0 OaCPXbOa_0" d="M93.5,509.5L262,486"></path>
+                <path class="st0 OaCPXbOa_1" d="M182,431L182,641L160,616"></path>
+                <path class="st0 OaCPXbOa_2" d="M134,545c0,0-30,70-53,71"></path>
+                <path class="st0 OaCPXbOa_3" d="M226,545L287,616"></path>
+                <path class="st0 OaCPXbOa_4" d="M268,467c0,0-25,1-24-16s5-20,18-20s24,2,25,15S278,468,268,467z"></path>
+                <path class="st0 OaCPXbOa_5" d="M347,536L540,526"></path>
+                <path class="st0 OaCPXbOa_6" d="M661,436c0,0,7,201,0,211"></path>
+                <path class="st0 OaCPXbOa_7" d="M671,526L778,555"></path>
+                <path class="st0 OaCPXbOa_8" d="M878,486l147-24c0,0-74,165-109,179"></path>
+                <path class="st0 OaCPXbOa_9" d="M1140,551L1273,514"></path>
+                <path class="st0 OaCPXbOa_10" d="M1231,467c0,0-5,172,0,178s-25-18-25-18"></path>
+                <path class="st0 OaCPXbOa_11" d="M1225,533c0,0-69,94-89,91"></path>
+                <path class="st0 OaCPXbOa_12" d="M1440,440c0,0-7,115-3,115"></path>
+                <path class="st0 OaCPXbOa_13" d="M1520,420c0,0,15,208-34,232"></path>
+                <path class="st0 OaCPXbOa_14" d="M1653,514L1830,483"></path>
+                <path class="st0 OaCPXbOa_15" d="M1777,434L1787,641L1757,624"></path>
+                <path class="st0 OaCPXbOa_16" d="M1772,498c0,0-96,136-119,136"></path>
+                <style data-made-with="vivus-instant">
+                  .OaCPXbOa_0 {
+                    stroke-dasharray: 171 173;
+                    stroke-dashoffset: 172;
+                    animation: OaCPXbOa_draw 168ms ease 0ms forwards;
+                  }
+
+                  .OaCPXbOa_1 {
+                    stroke-dasharray: 244 246;
+                    stroke-dashoffset: 245;
+                    animation: OaCPXbOa_draw 239ms ease 168ms forwards;
+                  }
+
+                  .OaCPXbOa_2 {
+                    stroke-dasharray: 92 94;
+                    stroke-dashoffset: 93;
+                    animation: OaCPXbOa_draw 90ms ease 407ms forwards;
+                  }
+
+                  .OaCPXbOa_3 {
+                    stroke-dasharray: 94 96;
+                    stroke-dashoffset: 95;
+                    animation: OaCPXbOa_draw 92ms ease 498ms forwards;
+                  }
+
+                  .OaCPXbOa_4 {
+                    stroke-dasharray: 130 132;
+                    stroke-dashoffset: 131;
+                    animation: OaCPXbOa_draw 128ms ease 591ms forwards;
+                  }
+
+                  .OaCPXbOa_5 {
+                    stroke-dasharray: 194 196;
+                    stroke-dashoffset: 195;
+                    animation: OaCPXbOa_draw 190ms ease 719ms forwards;
+                  }
+
+                  .OaCPXbOa_6 {
+                    stroke-dasharray: 212 214;
+                    stroke-dashoffset: 213;
+                    animation: OaCPXbOa_draw 208ms ease 909ms forwards;
+                  }
+
+                  .OaCPXbOa_7 {
+                    stroke-dasharray: 111 113;
+                    stroke-dashoffset: 112;
+                    animation: OaCPXbOa_draw 109ms ease 1117ms forwards;
+                  }
+
+                  .OaCPXbOa_8 {
+                    stroke-dasharray: 361 363;
+                    stroke-dashoffset: 362;
+                    animation: OaCPXbOa_draw 353ms ease 1227ms forwards;
+                  }
+
+                  .OaCPXbOa_9 {
+                    stroke-dasharray: 139 141;
+                    stroke-dashoffset: 140;
+                    animation: OaCPXbOa_draw 136ms ease 1581ms forwards;
+                  }
+
+                  .OaCPXbOa_10 {
+                    stroke-dasharray: 212 214;
+                    stroke-dashoffset: 213;
+                    animation: OaCPXbOa_draw 208ms ease 1717ms forwards;
+                  }
+
+                  .OaCPXbOa_11 {
+                    stroke-dasharray: 130 132;
+                    stroke-dashoffset: 131;
+                    animation: OaCPXbOa_draw 128ms ease 1926ms forwards;
+                  }
+
+                  .OaCPXbOa_12 {
+                    stroke-dasharray: 116 118;
+                    stroke-dashoffset: 117;
+                    animation: OaCPXbOa_draw 114ms ease 2054ms forwards;
+                  }
+
+                  .OaCPXbOa_13 {
+                    stroke-dasharray: 242 244;
+                    stroke-dashoffset: 243;
+                    animation: OaCPXbOa_draw 237ms ease 2168ms forwards;
+                  }
+
+                  .OaCPXbOa_14 {
+                    stroke-dasharray: 180 182;
+                    stroke-dashoffset: 181;
+                    animation: OaCPXbOa_draw 176ms ease 2405ms forwards;
+                  }
+
+                  .OaCPXbOa_15 {
+                    stroke-dasharray: 242 244;
+                    stroke-dashoffset: 243;
+                    animation: OaCPXbOa_draw 237ms ease 2582ms forwards;
+                  }
+
+                  .OaCPXbOa_16 {
+                    stroke-dasharray: 183 185;
+                    stroke-dashoffset: 184;
+                    animation: OaCPXbOa_draw 179ms ease 2820ms forwards;
+                  }
+
+                  @keyframes OaCPXbOa_draw {
+                    100% {
+                      stroke-dashoffset: 0;
+                    }
+                  }
+
+                  @keyframes OaCPXbOa_fade {
+                    0% {
+                      stroke-opacity: 1;
+                    }
+
+                    94.44444444444444% {
+                      stroke-opacity: 1;
+                    }
+
+                    100% {
+                      stroke-opacity: 0;
+                    }
+                  }
+                </style>
+              </svg>
+            </div>
+          </h1>
+        </section>
+      </header>
+    </div>
+
+    <!---------- メインコンテンツ ---------->
+
+    <main>
+      <div class="main-container container">
+
+        <!---------- works ---------->
+        <section id="works" class="works">
+          <h2 class="heading fadein">works</h2>
+          <div class="work-container">
+            <h3 class="fadein">banner-original</h3>
+            <div class="work-box">
+              <div class="work-item fadein">
+                <a class="modal-syncer button-link" data-target="modal-content-01">
+                  <img class="org-img shadow" src="./images/index_bn01.jpg" alt="オリジナルバナー1" srcset=""></a>
+              </div>
+              <div class="work-item fadein">
+                <a class="modal-syncer button-link" data-target="modal-content-02">
+                  <img class="org-img shadow" src="./images/index_bn02.jpg" alt="オリジナルバナー2" srcset=""></a>
+              </div>
+              <div class="work-item fadein">
+                <a class="modal-syncer button-link" data-target="modal-content-03">
+                  <img class="org-img shadow" src="./images/index_bn03.jpg" alt="オリジナルバナー3" srcset=""></a>
+              </div>
+            </div>
+
+            <!-- バナートレース -->
+            <h3 class="fadein">banner-trace</h3>
+            <div class="work-box">
+              <div class="work-item fadein">
+                <a class="modal-syncer button-link" data-target="modal-content-04">
+                  <img class="bnt-img shadow" src="./images/index_bnt01.jpg" alt="バナートレース1" srcset=""></a>
+              </div>
+              <div class="work-item fadein">
+                <a class="modal-syncer button-link" data-target="modal-content-05">
+                  <img class="bnt-img shadow" src="./images/index_bnt02.jpg" alt="バナートレース2" srcset=""></a>
+              </div>
+              <div class="work-item fadein">
+                <a class="modal-syncer button-link" data-target="modal-content-06">
+                  <img class="bnt-img shadow" src="./images/index_bnt03.jpg" alt="バナートレース3" srcset=""></a>
+              </div>
+            </div>
+            <!-- LPトレース -->
+            <h3 class="fadein">LP-trace</h3>
+            <div class="work-box">
+              <div class="work-item fadein">
+                <a class="" href="https://mysecondwebsite-c9004.firebaseapp.com/">
+                  <img class="bnt-img shadow" src="./images/img_lp_01.jpg" alt="LP1つ目の画像" srcset=""></a>
+              </div>
+              <div class="work-item fadein">
+                <a class="" href="./bootstrap/index.html">
+                  <img class="bnt-img shadow" src="./images/img_lp_02.jpg" alt="LP2つ目の画像" srcset=""></a>
+              </div>
+              <div class="work-item fadein">
+                <a class="" href="./nuno/index.html">
+                  <img class="bnt-img shadow" src="./images/img_lp_03.jpg" alt="LP3つ目の画像" srcset=""></a>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://www.resume.id/hk1207/works" target="_blank" class="button">read more</a>
+        </section>
+
+        <!--モーダルウィンドウ開始（非表示）-->
+        <div id="modal-content-01" class="modal-content">
+          <div class="note_wrap">
+            <img class="modal-org-img" src="./images/index_bn01.jpg" alt="オリジナルバナー1" srcset="">
+            <div class="note">
+              <p>コンセプト：温泉旅館サイトの３大特典アピール<br>
+                ターゲット：30～40代カップル<br>
+                工夫点　　：落ち着いた色使い<br>
+                制作時間　：70分</p>
+            </div>
+            <p class="button-close"><a id="modal-close" class="button-link">閉じる</a></p>
+          </div>
+        </div>
+
+        <div id="modal-content-02" class="modal-content">
+          <div class="note_wrap">
+            <img class="modal-org-img" src="./images/index_bn02.jpg" alt="オリジナルバナー2" srcset="">
+            <div class="note">
+              <p>コンセプト：フィットネスクラブのキャンペーンを推進<br>
+                ターゲット：運動不足な30～40代男女<br>
+                イメージ　：躍動感、冬→春まで使える<br>
+                制作時間　：60分</p>
+            </div>
+            <p class="button-close"><a id="modal-close" class="button-link">閉じる</a></p>
+          </div>
+        </div>
+
+        <div id="modal-content-03" class="modal-content">
+          <div class="note_wrap">
+            <img class="modal-org-img" src="./images/index_bn03.jpg" alt="オリジナルバナー3" srcset="">
+            <div class="note">
+              <p>コンセプト：冬季限定チョコ。今だけ割引価格<br>
+                ターゲット：20～40代働く男女<br>
+                イメージ　：冬の色<br>
+                制作時間　：60分</p>
+            </div>
+            <p class="button-close"><a id="modal-close" class="button-link">閉じる</a></p>
+          </div>
+        </div>
+
+        <div id="modal-content-04" class="modal-content">
+          <div class="note_wrap">
+            <img class="modal-tl-img" src="./images/bnt01.jpg" alt="バナートレース1" srcset="">
+            <p class="button-close"><a id="modal-close" class="button-link">閉じる</a></p>
+
+          </div>
+        </div>
+
+        <div id="modal-content-05" class="modal-content">
+          <div class="note_wrap">
+            <img class="modal-t-img" src="./images/bnt02.jpg" alt="バナートレース2" srcset="">
+            <p class="button-close"><a id="modal-close" class="button-link">閉じる</a></p>
+
+          </div>
+        </div>
+
+        <div id="modal-content-06" class="modal-content">
+          <div class="note_wrap">
+            <img class="modal-t-img" src="./images/bnt03.jpg" alt="バナートレース3" srcset="">
+            <p class="button-close"><a id="modal-close" class="button-link">閉じる</a></p>
+          </div>
+        </div>
+
+        <!--aboutモーダルウィンドゥ-->
+
+        <div id="modal-content-07" class="modal-content">
+          <div class="note_wrap">
+            <img class="modal-about-img" src="./images/about_im01b.jpg" alt="自己紹介1" srcset="">
+            <div class="note">
+              <p>氏名：神山 勇人<br>
+                出身：栃木県 日光市 蕎麦と湯葉が美味しい所です<br>
+                性格：誠実 冷静 責任感 行動的</p>
+            </div>
+            <p class="button-close"><a id="modal-close" class="button-link">閉じる</a></p>
+          </div>
+        </div>
+
+
+        <div id="modal-content-08" class="modal-content">
+          <div class="note_wrap">
+            <img class="modal-about-img" src="./images/about_im02b.jpg" alt="自己紹介2" srcset="">
+            <div class="note">
+              <p>2013-2016 小学校の先生<br>
+                2017-2018 中学校（技術科）の先生<br>
+                趣味で行っていたバンド活動においてホームページを作成し、<br>Webデザインの楽しさを知りました<br>
+                Webデザインを通して、情報化の時代を生きる私たちの日常を<br>便利にしたり楽しくしたりしたいです</p>
+            </div>
+            <p class="button-close"><a id="modal-close" class="button-link">閉じる</a></p>
+          </div>
+        </div>
+
+        <div id="modal-content-09" class="modal-content">
+          <div class="note_wrap">
+            <img class="modal-about-img" src="./images/about_im03b.jpg" alt="自己紹介3" srcset="">
+            <div class="note">
+              <p>高校生の頃からドラムを始め、今でも趣味でドラムを叩いています<br>
+                楽器はギターも簡単なコードを弾くことができます<br>No Music No Lifeの精神で生きてます<br>
+                他にも、読書、旅行、筋トレ、などが趣味です<br>25歳を過ぎてから健康を気遣うようになりました</p>
+            </div>
+            <p class="button-close"><a id="modal-close" class="button-link">閉じる</a></p>
+          </div>
+        </div>
+        <!--モーダルウィンドウ終了-->
+
+        <section id="skills" class="skills">
+          <h2 class="heading fadein">skills</h2>
+          <div class="card-container">
+            <div class="card fadein shadow">
+              <i class="skill-icon fas fa-palette fa-10x"></i>
+              <div class="card-content">
+                <h3 class="card-title">design</h3>
+                <p class="card-text">論理的なデザイン<br>色彩検定を取得予定<i class="fas fa-pencil-alt"></i></p>
+              </div>
+            </div>
+            <div class="card fadein shadow">
+              <i class="skill-icon fas fa-keyboard fa-10x"></i>
+              <div class="card-content">
+                <h3 class="card-title">coding</h3>
+                <p class="card-text">HTML5、CSS3、JavaScript、jQuery<br>使用可能エディタはVSCode、Dw、Brackets</p>
+              </div>
+            </div>
+            <div class="card fadein shadow">
+              <i class="skill-icon fas fa-chalkboard-teacher fa-10x"></i>
+              <div class="card-content">
+                <h3 class="card-title">coaching</h3>
+                <p class="card-text">教師の経験を生かした指導・学習法<br>インプットとアウトプットを効率的に行います。</p>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <section id="about" class="about">
+          <div class="rsp-hidden">
+            <h2 class="heading fadein">about</h2>
+            <div class="comic">
+
+              <a class="modal-syncer" data-target="modal-content-07">
+                <div class="panel panel-1 fadein shadow">
+                  <p class="text top-left">My name is...</p>
+                  <p class="text bottom-right">Hayato Kamiyama.</p>
+                  <span class="more-text">Read More</span>
+                </div>
+              </a>
+
+              <a class="modal-syncer" data-target="modal-content-08">
+                <div class="panel panel-2 fadein shadow">
+                  <p class="text top-left">I was a teacher.</p>
+                  <p class="text bottom-right">I'm looking for new job<br>create web service and design.</p>
+                  <span class="more-text">Read More</span>
+                </div>
+              </a>
+
+              <a class="modal-syncer" data-target="modal-content-09">
+                <div class="panel panel-3 fadein shadow">
+                  <p class="speech">Let's play drums!</p>
+                  <p class="text bottom-right">I like to play drums,read manga,<br>
+                    watch movie and travel.</p>
+                  <span class="more-text">Read More</span>
+                </div>
+              </a>
+
+            </div>
+          </div>
+
+          <!------レスポンシブ用about--->
+          <div class="rsp">
+            <h2 class="heading fadein">about</h2>
+            <div class="about-container">
+              <div class="card fadein shadow">
+                <div class="card-content">
+                  <img class="slf-img" alt="自画像" src="./images/about_im01.jpg">
+                  <p class="card-text">神山 勇人<br><br>栃木県 日光市 出身<br><br>周りから言われる性格は「誠実」「穏やか」など</p>
+                </div>
+              </div>
+              <div class="card fadein shadow">
+                <div class="card-content">
+                  <img class="slf-img" alt="教員時代の画像" src="./images/about_im02.jpg">
+                  <p class="card-text">約5年、小中学校の教師をやっていました<br>趣味のバンドでのHP作りを通して、<br>Webデザインにハマりました</p>
+                </div>
+              </div>
+              <div class="card fadein shadow">
+                <div class="card-content">
+                  <img class="slf-img" alt="ドラム演奏画像" src="./images/about_im03.jpg">
+                  <p class="card-text">高校生の時から趣味でドラムをやっています<br>No Music No Life<br> <br>読書、旅行、筋トレ、なども好きです</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!--  <section id="music" class="music">
+            <h2 class="heading">music</h2>
+          <div class="swiper-container loading">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/qEgHMSB2Ess" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="swiper-slide video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Y5m1CoANsz0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <div class="swiper-slide video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/unnHof3GVx4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </section> -->
+      </div>
+
+
+      <section id="contact" class="contact">
+        <div id="formWrapper">
+          <h2 class="heading fadein">contact</h2>
+          <form class="contact-form fadein"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSfOlPKs4nIx1SZMVBlB91oFb-_ZTY4Mq-wBam_fqh3bi-MT3Q/formResponse"
+            target="_self" method="POST" id="mG61Hd">
+            <input class="" type="text" name="entry.2005620554" autocomplete="name" placeholder="名前（必須）" required>
+            <input class="" type="email" name="entry.1045781291" value="" autocomplete="email" placeholder="メールアドレス（必須）"
+              required>
+            <textarea class="" name="entry.839337160" placeholder="メッセージ（必須）" required></textarea>
+            <input class="button-send" type="submit" value="send">
+          </form>
+          <!-- <iframe name="dummyIframe" style="display:none;" onload="showThxMessage()"></iframe> -->
+        </div>
+        <!-- <div id="thxMessage" class="animated fadeIn" style="display:none;">
+          <div class="afterformtit">お問い合わせありがとうございました</div>
+          <div class="formtxt">ご記入いただいたメールアドレス <span style="color:#5B4E42; font-weight:bold;"></span>
+            へ自動返信メールを送信させていただく予定でしたが、まだ制作中のため送信いたしません。</div>
+        </div> -->
+      </section>
+
+      <div id="page_top"><a href="#"></a></div>
+
+    </main>
+
+    <div class="container footer-container">
+      <footer>
+        <p><small>&copy; Hayato Kamiyama</small></p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.3.2/vivus.js"></script>
+  <script src="./js/modal-multi.js"></script>
+  <script src="./js/zdo_drawer_menu.js"></script>
+  <script src="./js/effect.js"></script>
+  <script src="./js/swiper.min.js"></script>
+  <script src="./js/slider.js"></script>
+
+  <!-- //Googleの送信完了ページに飛ばさないスクリプト
+  <script>
+    function showThxMessage() {
+      var email = document.myForm.emailAddress.value;
+      if (email !== '') {
+        var thxDiv = document.getElementById('thxMessage');
+        thxDiv.getElementsByTagName('span')[0].innerHTML = email;
+        document.myForm.reset();
+        document.getElementById('formWrapper').style.display = 'none';
+        thxDiv.style.display = 'block';
+      }
+    }
+  </script> -->
+
+</body>
+
+</html>

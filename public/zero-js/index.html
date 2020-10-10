@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="robots" content="noindex" />
+  <title>「知識ゼロからのJavaScript入門」まとめ</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css" />
+  <link rel="stylesheet" href="css/atom-one-dark-reasonable.css" />
+  <!-- js -->
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+  <script src="js/highlight.pack.js"></script>
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header class="page-header">
+    <h1>「知識ゼロからのJavaScript入門」まとめ</h1>
+  </header>
+  <!-- ヘッダー -->
+  <div class="flex">
+    <!-- 目次・サイドバー -->
+    <div class="page-contents" id="page-contents">
+      <p class="page-contents_head">目次</p>
+      <ul>
+        <li class="h1"><a href="#intro_head">はじめに</a></li>
+        <li class="h1">JavaScript実践</li>
+        <li class="h2">
+          <a href="#js-practice_html-text">HTMLのテキスト情報変更</a>
+        </li>
+        <li class="h2"><a href="#js-practice_tag">liタグの作成</a></li>
+        <li class="h2">
+          <a href="#js-practice_popup">クリックでポップアップ表示</a>
+        </li>
+        <li class="h2"><a href="#js-practice_time">現在時刻の表示</a></li>
+        <li class="h2">
+          <a href="#js-practice_game">倍数当てゲームの作成</a>
+        </li>
+        <li class="h1"><a href="#jq-about">jQueryについて</a></li>
+        <li class="h2"><a href="#jq-melit">jQueryのメリット</a></li>
+        <li class="h1">jQuery実践</li>
+        <li class="h2">
+          <a href="#jq-practice_popup">クリックでポップアップ表示</a>
+        </li>
+        <li class="h2">
+          <a href="#jq-practice_text">テキストフィールドの文字数を表示</a>
+        </li>
+        <li class="h2">
+          <a href="#jq-practice_radio">チェックが付いたラジオボタンのテキスト表示</a>
+        </li>
+        <li class="h2">
+          <a href="#jq-practice_field">テキストフィールドが未入力ならサブミットボタンを無効</a>
+        </li>
+        <li class="h2">
+          <a href="#jq-practice_data">フォームバリデーターの作成</a>
+        </li>
+        <li class="h1">JavaScriptを深める</li>
+        <li class="h2"><a href="#js-scope">スコープの範囲</a></li>
+        <li class="h2"><a href="#dom-event">DOMイベントの伝播</a></li>
+        <li class="h2"><a href="#douki">同期処理・非同期処理</a></li>
+        <li class="h2"><a href="#ajax">Ajaxについて</a></li>
+        <li class="h2"><a href="#json">JSONについて</a></li>
+        <li class="h1"><a href="#js-study">JavaScriptの学習について</a></li>
+        <li class="h1"><a href="#matome">まとめ</a></li>
+      </ul>
+    </div>
+    <!-- 目次・サイドバー -->
+    <!-- メイン -->
+    <main class="main-contents">
+      <section class="intro" id="intro">
+        <h1 id="intro_head">はじめに</h1>
+        <p>
+          ここは「知識ゼロからのJavaScript入門」という書籍を通して学んだことをまとめたページです。
+        </p>
+        <div class="intro_book">
+          <p class="intro_book_img">
+            <img src="images/js-book.jpg" alt="知識ゼロからのJavaScript入門" />
+          </p>
+          <cite>画像出典：<a href="https://gihyo.jp/book/2018/978-4-7741-9939-9" target="blank" rel="noopener">技術評論社
+              知識ゼロからのシリーズ
+              知識ゼロからのJavaScript入門</a></cite>
+        </div>
+        <p style="margin-top: 1em;">
+          この本は大きく９項目で構成されていますが、最初の３項目、
+        </p>
+        <ul>
+          <li>CHAPTER1 WEBシステムとJavaScript</li>
+          <li>CHAPTER2 JavaScriptを書き始める前に</li>
+          <li>CHAPTER3 初めてのJavaScript</li>
+        </ul>
+        <p>の部分は省略しました。</p>
+        <p style="margin-top: 1em;">
+          というのも上記３項目では、DOMについてや、演算、変数、条件分岐、関数など、JavaScriptの基礎・基本の部分が書かれています。
+        </p>
+        <div class="clip-box">
+          <h2>このページの活用方法</h2>
+          <ul>
+            <li>jsファイルを見て意味がわかるか試す</li>
+            <li>もっと効率的な書き方はないか考える</li>
+          </ul>
+          <p>
+            ※コードの説明や解釈が間違っている部分があれば、遠慮なくご指摘いただければと思います。
+          </p>
+        </div>
+        <p style="margin-top: 1em;">
+          それでは学習のまとめを御覧ください。
+        </p>
+      </section>
+
+      <section class="js-practice" id="js-practice">
+        <h1 id="js-practice_head">JavaScript実践</h1>
+        <p class="js-practice_head_img">
+          <img src="images/logo-js.svg" alt="" />
+        </p>
+        <p>
+          所々にコードを載せていますが、エディタのエラーメッセージを防ぐために「＞」「＜」を全角に変換してあります。
+        </p>
+        <p>
+          万が一コピペする際はお気をつけください。<br class="sp-show" />m(_
+          _)m
+        </p>
+
+        <h2 id="js-practice_html-text">HTMLのテキスト情報変更</h2>
+        <p class="sp-show">「Result」で結果が見られます</p>
+        <p class="codepen" data-height="176" data-theme-id="dark" data-default-tab="js,result" data-user="jookalubi"
+          data-slug-hash="XWJzOMM"
+          style="height: 176px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="JavaScript入門 HTMLのテキスト変更">
+          <span>See the Pen
+            <a href="https://codepen.io/jookalubi/pen/XWJzOMM">
+              JavaScript入門 HTMLのテキスト変更</a>
+            by jookalubi (<a href="https://codepen.io/jookalubi">@jookalubi</a>) on <a
+              href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        <div class="box-blue">
+          <span class="box-title">使用したJavaScript</span>
+          <div>
+            <ul>
+              <li>innerHTML…要素が持つ情報を参照したり変更したりできる。</li>
+              <li>document.getElementById('id名')</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="js-practice_tag">liタグの作成</h2>
+        <p class="sp-show">「Result」で結果が見られます</p>
+        <p class="codepen" data-height="333" data-theme-id="dark" data-default-tab="js,result" data-user="jookalubi"
+          data-slug-hash="dyPZaRe"
+          style="height: 333px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="JavaScript入門 liタグの作成">
+          <span>See the Pen
+            <a href="https://codepen.io/jookalubi/pen/dyPZaRe">
+              JavaScript入門 liタグの作成</a>
+            by jookalubi (<a href="https://codepen.io/jookalubi">@jookalubi</a>) on <a
+              href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        <div class="box-blue">
+          <span class="box-title">使用したJavaScript</span>
+          <div>
+            <ul>
+              <li>for文</li>
+              <li>document.createElement('要素')</li>
+              <li>document.createTextNode('要素のテキスト')</li>
+              <li>要素.appendChild(変数)…要素に変数を追加</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="js-practice_popup">クリックでポップアップ表示</h2>
+        <p class="sp-show">「Result」で実行できます</p>
+        <p class="codepen" data-height="205" data-theme-id="dark" data-default-tab="js,result" data-user="jookalubi"
+          data-slug-hash="jOEagqp"
+          style="height: 205px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="JavaScript入門 クリックでポップアップ表示">
+          <span>See the Pen
+            <a href="https://codepen.io/jookalubi/pen/jOEagqp">
+              JavaScript入門 クリックでポップアップ表示</a>
+            by jookalubi (<a href="https://codepen.io/jookalubi">@jookalubi</a>) on <a
+              href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        <div class="box-blue">
+          <span class="box-title">使用したJavaScript</span>
+          <div>
+            <ul>
+              <li>
+                変数.addEventListener('click',function(){alert('表示テキスト')})
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="js-practice_time">現在時刻の表示</h2>
+        <p class="codepen" data-height="275" data-theme-id="dark" data-default-tab="js,result" data-user="jookalubi"
+          data-slug-hash="MWYONeL"
+          style="height: 275px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="JavaScript入門 現在時刻の表示">
+          <span>See the Pen
+            <a href="https://codepen.io/jookalubi/pen/MWYONeL">
+              JavaScript入門 現在時刻の表示</a>
+            by jookalubi (<a href="https://codepen.io/jookalubi">@jookalubi</a>) on <a
+              href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        <div class="box-blue">
+          <span class="box-title">使用したJavaScript</span>
+          <div>
+            <ul>
+              <li>var date = new Date()</li>
+              <li>
+                var hour = date.getHours()
+              </li>
+              <li>
+                var min = date.getMinutes()
+              </li>
+              <li>
+                var sec = date.getSeconds()
+              </li>
+              <li>
+                setInterval(繰り返したい処理,間隔)
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="js-practice_game">倍数当てゲームの作成</h2>
+        <p class="sp-show">「Result」で実行できます</p>
+        <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="js,result" data-user="jookalubi"
+          data-slug-hash="KKwyOgG"
+          style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="JavaScript入門 倍数当てゲーム">
+          <span>See the Pen
+            <a href="https://codepen.io/jookalubi/pen/KKwyOgG">
+              JavaScript入門 倍数当てゲーム</a>
+            by jookalubi (<a href="https://codepen.io/jookalubi">@jookalubi</a>) on <a
+              href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        <div class="box-blue">
+          <span class="box-title">使用したJavaScript</span>
+          <div>
+            <ul>
+              <li>var date = new Date()</li>
+              <li>
+                var hour = date.getHours()
+              </li>
+              <li>
+                var min = date.getMinutes()
+              </li>
+              <li>
+                var sec = date.getSeconds()
+              </li>
+              <li>
+                clearInterval()
+              </li>
+            </ul>
+            <p class="note">
+              ※addEventListenerの中身が長くなってしまう場合は、addEventListenerの外で関数化する。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="jquery">
+        <h1 id="jq-about">jQueryについて</h1>
+        <p class="jq-about_img"><img src="images/jq_logo.png" alt="" /></p>
+        <p>
+          プログラムの開発効率を上げるために「ライブラリ」と呼ばれる、他の人が作成したコードを利用する文化がある。
+        </p>
+        <p>jQueryはJavaScriptのライブラリの一つである。</p>
+
+        <h2 id="jq-melit">jQueryのメリット</h2>
+        <div class="js-melit">
+          <h3>jQueryを利用することで簡潔に書けるようになる。</h3>
+          <div class="box-blue">
+            <span class="box-title">JavaScript</span>
+            <div>
+              <p>変数＝documet.getElementByID(id名);</p>
+              <p>変数.addEventListener(イベント名,処理);</p>
+            </div>
+          </div>
+          <div class="box-blue">
+            <span class="box-title">jQuery</span>
+            <div>
+              <p>変数＝$(id名);</p>
+              <p>変数.on(イベント名,処理)(;</p>
+            </div>
+          </div>
+          <h3>クロスブラウザ対応しなくてよい</h3>
+          <p>
+            jQueryにはあらかじめクロスブラウザ対応の処理が実装されている。
+          </p>
+          <p style="padding-top: 1em;">
+            例えばaddEventListenerはIE8に対応していないため、代わりにattachEventで対応しなければならない（コード量が増える）。
+          </p>
+        </div>
+      </section>
+
+      <section class="jq-practice">
+        <h1 id="jq-practice">jQuery実践</h1>
+
+        <h2 id="jq-practice_popup">クリックでポップアップ表示</h2>
+        <p class="sp-show">「Result」で実行できます</p>
+        <p class="codepen" data-height="207" data-theme-id="dark" data-default-tab="js,result" data-user="jookalubi"
+          data-slug-hash="eYmeqGq"
+          style="height: 207px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="JavaScript入門 jQuery ポップアップ表示">
+          <span>See the Pen
+            <a href="https://codepen.io/jookalubi/pen/eYmeqGq">
+              JavaScript入門 jQuery ポップアップ表示</a>
+            by jookalubi (<a href="https://codepen.io/jookalubi">@jookalubi</a>) on <a
+              href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        <div class="box-blue">
+          <span class="box-title">使用したjQuery</span>
+          <div>
+            <ul>
+              <li>onメソッド(click)</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="jq-practice_text">テキストフィールドの文字数を表示</h2>
+        <p class="sp-show">「Result」で実行できます</p>
+        <p class="codepen" data-height="248" data-theme-id="dark" data-default-tab="js,result" data-user="jookalubi"
+          data-slug-hash="ExabqQj"
+          style="height: 248px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="ExabqQj">
+          <span>See the Pen
+            <a href="https://codepen.io/jookalubi/pen/ExabqQj"> ExabqQj</a> by
+            jookalubi (<a href="https://codepen.io/jookalubi">@jookalubi</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        <div class="box-blue">
+          <span class="box-title">使用したjQuery</span>
+          <div>
+            <ul>
+              <li>onメソッド(keyup…キーボードを打って離した時の処理)</li>
+              <li>
+                valメソッド…レシーバ（呼び出し元のオブジェクト）となる要素情報のvalue属性を返す<br />今回の場合はinputの入力値（value属性）をtextという変数に返して（代入して）いる。
+              </li>
+              <li>
+                textメソッド…レシーバ要素のテキスト情報を取得、変更できる。<br />今回は引数（text.length）を与えているので、レシーバ要素を引数の値に変更している。<br />JavaScriptのinnerHTMLと同じ処理。
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="jq-practice_radio">
+          チェックが付いたラジオボタンのテキスト表示
+        </h2>
+        <p class="sp-show">「Result」で実行できます</p>
+        <p class="codepen" data-height="247" data-theme-id="dark" data-default-tab="js,result" data-user="jookalubi"
+          data-slug-hash="KKwyOQJ"
+          style="height: 247px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="KKwyOQJ">
+          <span>See the Pen
+            <a href="https://codepen.io/jookalubi/pen/KKwyOQJ"> KKwyOQJ</a> by
+            jookalubi (<a href="https://codepen.io/jookalubi">@jookalubi</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        <div class="box-blue">
+          <span class="box-title">使用したjQuery</span>
+          <div>
+            <ul>
+              <li>changeメソッド</li>
+              <li>イベントオブジェクト(e)…発生したイベントに関する情報</li>
+              <li>currentTarget…イベントオブジェクト内のプロパティの１つ</li>
+              <p class="note" style="margin:0;">
+                つまり「e.currentTarget」は、イベントオブジェクトの中のcurrentTargetという情報を取得している。
+              </p>
+              <li>nextメソッド…レシーバに隣接する次の要素情報を取得する。</li>
+              今回の場合では＜label＞になる。
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="jq-practice_field">
+          テキストフィールドが未入力ならサブミットボタンを無効
+        </h2>
+        <dl>
+          <dt>コードの内容</dt>
+          <dd>文字を入力すると送信ボタンが押せるようになる</dd>
+          <dd>入力した文字をポップアップ表示</dd>
+        </dl>
+        <p class="sp-show">「Result」で実行できます</p>
+        <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="js,result" data-user="jookalubi"
+          data-slug-hash="KKwybGL"
+          style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="KKwybGL">
+          <span>See the Pen
+            <a href="https://codepen.io/jookalubi/pen/KKwybGL"> KKwybGL</a> by
+            jookalubi (<a href="https://codepen.io/jookalubi">@jookalubi</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        <div class="box-blue">
+          <span class="box-title">使用したjQuery</span>
+          <div>
+            <ul>
+              <li>
+                prpメソッド…引数の数によって処理が変わる<br />$要素.prop(属性名)…属性の値を取得<br />$要素.prop(属性名,値)…属性に値を設定
+              </li>
+              <li>
+                preventDefaultメソッド…要素に紐づくブラウザ機能をキャンセルする。<br />送信ボタンなどでページ遷移したくない時、<br />aタグなどでページ遷移する前にJavaScriptで処理したい時、などで使用する。
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="jq-practice_data">フォームバリデーターの作成</h2>
+        <dl>
+          <dt>コードの内容</dt>
+          <dd>タイトルまたは本文が0字で警告</dd>
+          <dd>タイトル10字以上または本文25字以上で警告</dd>
+          <dd>条件を満たすと送信ボタンが押せるようになる</dd>
+          <dd>送信ボタンを押すとポップアップが表示</dd>
+        </dl>
+        <p class="sp-show">「Result」で実行できます</p>
+        <p class="codepen" data-height="340" data-theme-id="dark" data-default-tab="js,result" data-user="jookalubi"
+          data-slug-hash="zYxPyXB"
+          style="height: 340px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;"
+          data-pen-title="JavaScript入門 jQuery バリデーターの作成">
+          <span>See the Pen
+            <a href="https://codepen.io/jookalubi/pen/zYxPyXB">
+              JavaScript入門 jQuery バリデーターの作成</a>
+            by jookalubi (<a href="https://codepen.io/jookalubi">@jookalubi</a>) on <a
+              href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        <div class="box-blue">
+          <span class="box-title">使用したjQuery</span>
+          <div>
+            <ul>
+              <li>
+                htmlメソッド…レシーバ要素が持つHTMLの取得・変更ができる。<br />$erros.html('')…$errorsのHTML要素（今回だと子要素の＜li＞を空('')にしている。
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h1>JavaScriptを深める</h1>
+        <h2 id="js-scope">スコープの範囲</h2>
+        <p>スコープとは…変数の有効範囲</p>
+        <p class="scope-figure">
+          <img src="images/scope.png" alt="scopeの説明" />
+        </p>
+        <div class="box-blue">
+          <span class="box-title">スコープまとめ</span>
+          <div>
+            <ul>
+              <li>関数単位（functionごと）で作成される。</li>
+              <li>
+                外側のスコープから内側のスコープの変数は参照できない。
+              </li>
+              <li>内側のスコープから外側のスコープの変数は参照できる。</li>
+              <li>
+                変数定義は「var」を使わなくても出来るが、そうするとグローバル変数になるため、極力使わないようにする。<br />グローバル変数は広範囲に影響を及ぼし、バグを起こしやすいので危険。<br />CSSでいうp{margin-bottom:10px;}みたいなもの。
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="dom-event">DOMイベントの伝播</h2>
+        <h3>イベントがどう伝わっていくのか</h3>
+        <p>
+          DOMに対してイベントが発生した場合、３つのフェーズに分かれてイベントがDOMに伝播する。
+        </p>
+        <ol class="ol-eventroot">
+          <li>キャプチャフェーズ</li>
+          <p>「Document→html→body→…→ターゲット」のルート</p>
+          <p>通常ここで通ったDOMのリスナーは実行されない。</p>
+          <li>ターゲットフェーズ</li>
+          <p>ターゲットでリスナーが実行される。</p>
+          <li>バブリングフェーズ</li>
+          <p>「ターゲット→…→body→html→Document」のルート</p>
+          <p>
+            （addEventListenerの場合）発生したイベントに紐付くリスナーが登録されていると、親要素のイベントリスナーもこのタイミングで実行される。
+          </p>
+        </ol>
+        <p class="domevent-figure">
+          <img src="images/domevent.png" alt="DOMイベント図" />
+        </p>
+        <h3>addEventListenerの”第３引数”とは</h3>
+        <p>
+          addEventListenerには「useCapture」という第三引数がついており、キャプチャフェーズでリスナーを実行するかどうか判定する真偽値がある。<br />省略した場合、falseになり、キャプチャフェーズでは実行されない。
+        </p>
+        <p style="margin-top: 1em;">
+          以下のようにtrueにすると、キャプチャフェーズの時点（ターゲットフェーズより前）で実行される。
+        </p>
+        <pre>下記コードは横スクロールできます<code class="javascript">box.addEventListener('click',function(){
+            console.log('クリックされたよ');},true);</code></pre>
+        <p>
+          しかしこのuseCaptureがfalseでもtrueでも結局は意図せずに実行されてしまう。そういう時は、<br /><b>「stopPropagation」というメソッドで伝播をキャンセルできる。</b>
+        </p>
+        <pre>下記コードは横スクロールできます<code class="javascript">box.addEventListener('click',function(e){e.stopPropagation();
+             console.log('クリックされたよ')},true);</code></pre>
+        <div class="box-blue">
+          <span class="box-title">DOMイベントまとめ</span>
+          <div>
+            <ul>
+              <li>
+                DOMイベントが発生すると、キャプチャフェーズ、ターゲットフェーズ、バブリングフェーズの順にイベントが伝播する。
+              </li>
+              <li>
+                addEventListenerの第三引数はキャプチャフェーズでリスナーを実行するかどうかの真偽値（useCapture）。<br />省略するとfalseとなりキャプチャフェーズで実行される。
+              </li>
+              <li>
+                イベントオブジェクトの「stopPropagation」メソッドを使うと、バブリングフェーズの伝播をキャンセルできる。
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="douki">同期処理・非同期処理</h2>
+        <dl>
+          <dt>同期処理…</dt>
+          <dd>時間と共に書いてあるコード順に実行される処理。</dd>
+        </dl>
+        <p style="margin-top: 1em;">
+          ※同期処理では処理実行中はユーザーがブラウザからの操作を行えない（ブロッキングになる）ので、複雑な処理や時間がかかる処理がある場合はユーザビリティを損ねるため良くない。
+        </p>
+        <pre>下記コードは横スクロールできます<code class="javascript">
+//同期処理
+
+function fun1() {
+console.log('麦わら');
+}
+
+function fun2() {
+console.log('帽子の君');
+}
+
+function fun3() {
+console.log('揺れたマリーゴールド');
+}
+
+//結果
+麦わら
+帽子の君
+揺れたマリーゴールド
+</code></pre>
+        <dl>
+          <dt>非同期処理…</dt>
+          <dd>
+            「ある条件」を満たすと実行される処理。処理の予約のようなもの。
+          </dd>
+        </dl>
+        <p style="margin-top: 1em;">
+          その「ある条件」を満たしたときに実行される関数をコールバック関数という。
+        </p>
+        <pre>下記コードは横スクロールできます<code class="javascript">
+    //非同期処理
+
+    function fun1() {
+      console.log('麦わら');
+    }
+
+    function fun2() {
+      console.log('帽子の君');
+    }
+
+    function fun3() {
+      console.log('揺れたマリーゴールド');
+    }
+
+    //setIntervalでコールバックとして実行
+    setInterval(fun1, 3000);//「3秒ごとにfun1を実行してね」という予約
+    setInterval(fun2, 5000);//「5秒ごとにfun2を実行してね」という予約
+
+    //結果
+    揺れたマリーゴールド
+    麦わら
+    帽子の君</code></pre>
+        <div class="box-blue">
+          <span class="box-title">同期処理・非同期処理まとめ</span>
+          <div>
+            <ul>
+              <li>同期処理はコード順（順次）に実行される。</li>
+              <li>
+                同期処理が実行されている間はユーザーはブラウザ上からの操作が行えない。（ブロッキング）
+              </li>
+              <li>
+                非同期処理は条件を満たした時に実行される予約のようなもので、ブロッキングによる待ち時間を減らす。
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 id="ajax">Ajaxについて</h2>
+        <h3>Ajaxとは？</h3>
+        <p>「Asynchronous JavaScript XML」の略称（Asynchronous…非同期）</p>
+        <p style="margin-top: 1em;">
+          通常はブラウザがサーバと通信を行うが、AjaxではJavaScriptがブラウザの代わりにサーバと非同期通信を行う。
+        </p>
+        <p class="ajax-figure">
+          <img src="images/ajax1.png" alt="ajaxとは" />
+        </p>
+        <p>
+          AjaxではJavaScriptのXHRオブジェクトというもので、サーバと通信してレスポンスデータを受け取っている。
+        </p>
+        <p style="margin-top: 1em;">
+          レスポンスデータから必要な情報を取り出し、更新したい所を変更している。<br />そのため、HTMLファイルを変更する必要がない。
+        </p>
+        <h3>「Google Map」はAjaxを利用したサービス</h3>
+        <p>
+          通常、新しいページやコンテンツを表示するときにはブラウザで更新（サーバと通信）しなくてはならない。
+        </p>
+        <p style="margin-top: 1em;">
+          しかしGoogle
+          Mapで、例えばドラッグやスワイプで地図を移動したとき（新しいコンテンツを表示するとき）、ブラウザは更新していない（ページ全体を再読み込みしたり、更新ボタンを押したりしない）。
+        </p>
+        <p>
+          これはGoogle
+          MapがAjaxを用いてページ内コンテンツの更新を非同期でやっているから。
+        </p>
+        <p class="ajax-figure"><img src="images/ajax2.png" alt="" /></p>
+
+        <h2 id="json">JSONについて</h2>
+        <dl>
+          <dt>JSONとは</dt>
+          <dd>「JavaScript Object Notation」の略称。</dd>
+          <dd>JavaScriptのオブジェクトに似たフォーマットのデータ。</dd>
+          <dd>AjaxでのレスポンスデータはJSONになることが多い。</dd>
+        </dl>
+        <h2>Ajaxを扱うときに必要な知識</h2>
+        <h3>リクエストの種類</h3>
+        <dl>
+          <dt>GET</dt>
+          <dd>サーバに送る情報をURLに付与して通信する方法</dd>
+          <dd>HTMLなどデータのリクエストではGETを使用する。</dd>
+          <dt>POST</dt>
+          <dd>
+            サーバに送る情報をリクエスボディという領域に入れて通信する方法
+          </dd>
+          <dd>
+            フォームから送信する場合など、サーバに送る情報が多いリクエストではPOSTを使用する。
+          </dd>
+        </dl>
+        <h3>ステータスコードについて</h3>
+        <p>
+          Webページでときどき目にする「404」などのコードは、サーバが処理結果に応じて返している<b>ステータスコード</b>のひとつ。
+        </p>
+        <table>
+          <tbody>
+            <caption>
+              代表的なステータスコード
+            </caption>
+            <thead>
+              <td>ステータスコード</td>
+              <td>意味</td>
+            </thead>
+            <tr>
+              <td>200 OK</td>
+              <td>
+                リクエストが問題なく受理され、要求に沿ったレスポンスデータを返せる場合
+              </td>
+            </tr>
+            <tr>
+              <td>301 Moved Permanently</td>
+              <td>
+                リクエストされた情報が別の場所に移動した場合（ページの改装が変更されたなど）
+              </td>
+            </tr>
+            <tr>
+              <td>302 Found</td>
+              <td>
+                一時的に、リクエストされた情報が別の場所に移動した場合（メンテナンス時など）
+              </td>
+            </tr>
+            <tr>
+              <td>403 Forbidden</td>
+              <td>
+                サーバ側でアクセスが許可されていない領域に対してリクエストがあった場合
+              </td>
+            </tr>
+            <tr>
+              <td>404 Not Found</td>
+              <td>リクエストされた情報が見つからない場合</td>
+            </tr>
+            <tr>
+              <td>500 Internal Server Error</td>
+              <td>
+                サーバ側に何らかの不具合（バグ）があり、リクエストされた情報が返せない場合
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>AjaxでJSONを取得する</h3>
+        <p>どういったものかだけ紹介。</p>
+        <p>コード内のコメントアウトで解説する。</p>
+        <pre>HTMLファイル<code class="html">（省略）
+＜body＞
+  ＜ul class="fruits"＞＜/ul＞
+（省略）</code></pre>
+        <pre>JSONファイル<code class="json">{
+  "fruits":["リンゴ","モモ","バナナ"]
+}</code></pre>
+        <pre>Ajaxのコード（JavaScript）<code class="javascript">$.ajax({
+  type:'GET',//リクエスト方法
+  url:'data.json',
+  dataType:'json',//受信するレスポンスデータのフォーマット
+
+  success:function(response){//リクエストが受理された場合の処理
+  var fruits=response["fruits"];
+  var$ul=$('.fruits');
+
+  for(var i=0;i＜fruits.length; i++){
+      $ul.append('＜li＞'+fruits[i]+'＜/li＞')
+    }
+  },
+  error:function(xhr,status,error){//リクエストの通信が失敗した場合の処理
+    console.log(status,error);
+  }
+});</code></pre>
+        <p>
+          上記のコードを実行すると、JSON内の情報（リンゴなど）がli要素として出力される。
+        </p>
+        <div class="box-blue">
+          <span class="box-title">Ajaxまとめ</span>
+          <div>
+            <ul>
+              <li>AjaxとはJavaScriptでサーバと非同期通信する技術のこと</li>
+              <li>
+                Ajaxのリクエスト送信、レスポンスデータの受信はJavaScriptのXHRオブジェクトで行う。
+              </li>
+              <li>
+                Ajaxでは多くの場合、JSONというデータをレスポンスデータとして利用する。
+              </li>
+              <li>リクエストするときは、GETとPOSTなどの方法がある。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="continue">
+        <h1 id="js-study">JavaScriptの学習について</h1>
+        <h2>基礎・基本が身についたあとの学習方法</h2>
+        <ul>
+          <li>学習した本を再読してコードの内容を理解する</li>
+          <li>言語仕様の理解を深める</li>
+          <li>自分でコードを書いてみる（CodePen推奨）</li>
+        </ul>
+        <h2>Webの情報を利用するときの注意点</h2>
+        <ul>
+          <li>コピペする際はコードの内容を理解できるようにする</li>
+          <li>コピペしたコードを変更してアレンジしてみる</li>
+          <li>コピペばかりにならないようにする</li>
+        </ul>
+      </section>
+      <section>
+        <h1 id="matome">まとめ</h1>
+        <div class="clip-box">
+          <p>
+            JavaScriptは今までProgateやドットインストールやいろんな書籍を通してして、勉強してコードを書いて色々作ってきましたが、今回のDOMイベントなど、仕組みのことはほとんど理解していなかったなと、勉強になりました。
+          </p>
+          <p>
+            タイトルが「知識ゼロから～」ですが、知識ゼロでなくても十分読み応えのある良書でした。<br />「HTMLとCSSのスキルはそこそこ身についたから、JavaScript挑戦してみるか～」という方などにおすすめです。
+          </p>
+          <p>最後まで読んでいただきありがとうございましたm(_ _)m</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <!-- トップへ戻る -->
+  <div id="top_scroll">
+    <a href="#" id="page-top1"><img src="images/top-btn.png" alt="" /></a>
+  </div>
+  <!-- メイン -->
+  <!-- フッター -->
+  <footer class="page-footer">
+    <p class="cite">
+      参考文献：<cite>小笠原 寛『知識ゼロからのJavaScript入門』初版 株式会社技術評論社
+        2018年</cite>
+    </p>
+    <small>&copy;2020 Hayato Kamiyama</small>
+  </footer>
+
+  <!-- オープニングアニメーション -->
+  <div class="bg-anime">
+    <p class="bg-text">Hello JavaScript</p>
+  </div>
+  <!-- js -->
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!-- ページトップリンク -->
+  <script type="text/javascript">
+    $(function () {
+      var pageTop1 = $('#page-top1');
+      pageTop1.click(function () {
+        $('body, html').animate({
+            scrollTop: 0
+          },
+          500
+        );
+        return false;
+      });
+      $(window).scroll(function () {
+        if ($(this).scrollTop() >= 200) {
+          pageTop1.css('bottom', '30px');
+        } else {
+          pageTop1.css('bottom', '-85px');
+        }
+      });
+    });
+  </script>
+  <script src="js/contents.js"></script>
+</body>
+
+</html>

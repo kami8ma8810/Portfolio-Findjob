@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>meanMenuデモ</title>
+  <link rel="stylesheet" href="meanmenu.min.css" />
+  <style>
+    body {
+    	margin:0;
+    	padding:0;
+    }
+
+    header nav {
+    	background:#efefef;
+    	text-align:center;
+    }
+
+    header nav ul {
+    	margin:0;
+    	padding:1em;
+    	list-style-type:none;
+    }
+
+    header nav ul li {
+    	display:inline;
+    	margin-left:1em;
+    }
+
+    header nav ul li:first-child {
+    	margin-left:0;
+    }
+
+    header nav ul li ul {
+    	display:none;
+    }
+
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="jquery.meanmenu.min.js"></script>
+  <script>
+    $(function () {
+      $("nav").meanmenu();
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Menu1</a>
+          <ul>
+            <li><a href="#">Menu1 1</a></li>
+            <li><a href="#">Menu1 2</a></li>
+            <li><a href="#">Menu1 3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Menu2</a></li>
+        <li><a href="#">Menu3</a></li>
+        <li><a href="#">Menu4</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <body>
+  </body>
+</body>
+
+</html>

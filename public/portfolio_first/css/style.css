@@ -1,0 +1,375 @@
+@charset "UTF-8";
+
+html {
+  font-size: 62.5%;
+}
+body {
+  background: #151515 url("../images/forestbg2.jpg") no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.5;
+  animation: fadeIn 2s ease 0s 1 normal;
+  -webkit-animation: fadeIn 2s ease 0s 1 normal;
+}
+@keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+img {
+  vertical-align: bottom;
+}
+
+/*--閉じるボタンアニメーション
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+.menu-trigger {
+  position: relative;
+  width: 50px;
+  height: 44px;
+}
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #252525;
+  border-radius: 4px;
+}
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.menu-trigger span:nth-of-type(2) {
+  top: 20px;
+}
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+
+.menu-trigger span:nth-of-type(2)::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: #252525;
+  border-radius: 4px;
+  transition: all .4s;
+}
+.menu-trigger.active span:nth-of-type(1) {
+  transform: translateY(20px) scale(0);
+}
+.menu-trigger.active span:nth-of-type(2) {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.menu-trigger.active span:nth-of-type(2)::after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.menu-trigger.active span:nth-of-type(3) {
+  transform: translateY(-20px) scale(0);
+}*/
+
+/*==========ヘッダー==========*/
+.header {
+  padding: 0 0 80px 0;
+}
+.header-menu {
+  margin-bottom: 100px;
+}
+.site-title {
+  margin: 120px 0 30px;
+  font-size: 6.5rem;
+  letter-spacing: 20px;
+}
+
+.site-discription {
+  margin-bottom: 50px;
+  color: #fff;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+}
+
+.button {
+  display: inline-block;
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #31BEAA;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 0 0 #838383;
+}
+.button:hover {
+  opacity: 0.9;
+}
+.button:active {
+  position: relative;
+  top: 5px;
+  box-shadow: none;
+}
+
+.buttons .button {
+  margin: 10px;
+}
+
+.about {
+  padding: 80px 30px;
+  background:#454545;
+  color: #fff;
+}
+
+.heading {
+  position: relative;
+  display: inline-block;
+  margin: 30px 0 15px;
+  padding-bottom: 5px;
+  letter-spacing: 2px;
+  font-size: 4rem;
+}
+.heading::before,
+.heading::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #999;
+}
+.heading::before {
+  bottom: 5px;
+}
+.about-text {
+  margin: 30px 0;
+  line-height: 2.5;
+  }
+
+
+/*==========ナビゲーション==========*/
+.hamburger {
+  margin-right: 10px;
+  padding: 10px 10px;
+  border: none;
+  width: 50px;
+  height: 50px;
+  background: url("../images/hamburgerblack.png") no-repeat center center ;
+  background-size: contain;
+}
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 10;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar {
+  display: none;
+  margin: 0;
+  list-style-type: none;
+  background: #fff;
+}
+.nav-item {
+  letter-spacing: 2px;
+}
+.nav-item a {
+  position: relative;
+  display: inline-block;
+  color: #252525;
+  text-decoration: none;
+  padding: 1.6rem 0;
+}
+.nav-item a::after {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #37C5A6;
+  transform: scale(0, 1);
+  transform-origin: right top;
+  transition: transform 0.3s ease-in-out;
+}
+.nav-item a:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+
+/*==========WORKS==========*/
+.works {
+  background: #5DA797;
+  color: #333;
+  padding: 80px 0;
+}
+
+.works-wrapper {
+  display: table;
+  width: 100%;
+  margin-top: 60px;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 30px;
+}
+
+.work-box {
+  display: table-cell;
+}
+
+.work-image {
+  display: inline-block;
+  width: 300px;
+  height: auto;
+  vertical-align: bottom;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.work-box:hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);  
+}
+
+
+
+/*==========SKILLS===========*/
+.skills {
+  padding: 80px 0;
+  background: #E9E9E9;
+  color:#333;
+}
+
+.skills-wrapper {
+  display: table;
+  width: 80%;
+  margin: 50px auto 0;
+  table-layout: fixed;
+}
+
+.skill-box {
+  display: table-cell;
+}
+
+.skill-icon {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+  padding-top: 35px;
+  border: 6px solid;
+  border-radius: 50%;
+  color: #37C5A6;
+  font-size: 7rem;
+}
+
+.skill-title {
+  margin: 0 20px 20px;
+  font-size: 2.5rem;
+}
+
+.skill-text {
+  margin: 0 20px;
+  line-height: 2;
+}
+/*==========CONTACT==========*/
+.contact {
+  padding: 80px 0 150px;
+}
+.contact-form {
+  width: 50%;
+  margin: 50px auto 0;
+}
+
+.contact-form input[type=text],
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.contact-form input[type=text]:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.contact-form textarea {
+  height: 150px;
+}
+
+.contact-form input {
+  display: block;
+  width: 200px;
+  margin: 40px auto 0;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.contact-form input[type=submit]:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+
+/*==========footer==========*/
+.footer {
+  padding: 12px 0;
+  font-size: 1.3rem;
+}
+
+
+
+
+/*
+/*アイキャッチアニメーション　後で消す*/
+/*.animation {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+.animation:nth-child(1) {
+  background-image: url("../images/bgh101.png");
+}
+.animation:nth-child(2) {
+  background-image: url("../images/bgh102.png");
+}
+.animation:nth-child(3) {
+  background-image: url("../images/bgh103.png");
+}
+.animation:nth-child(4) {
+  background-image: url("../images/bgh104.png");
+}*/

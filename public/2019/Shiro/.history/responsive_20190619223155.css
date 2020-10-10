@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700');
+
+@media screen and (max-width: 960px) {
+  .u-content-wrapper {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 960px) {
+  .work_contents {
+    display: block;
+    height: auto;
+  }
+
+  .work_content {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .u-content-wrapper {
+    width: 95%;
+  }
+
+
+}

@@ -1,0 +1,741 @@
+@charset "utf-8";
+//----------------------------
+// カラー
+//----------------------------
+$colorBlack:#333333 !default;
+$colorGray:#707f89 !default;
+$colorLightGray:#eef4f8 !default;
+$colorWhite:#ffffff !default;
+$colorBlue:#2e5180 !default;
+$textColorBlack:$colorBlack;
+$textColorBlue:$colorBlue;
+$textColorGray:$colorGray;
+$textColorLightGray:$colorLightGray;
+$textColorWhite:$colorWhite;
+//----------------------------
+// レスポンシブ
+//----------------------------
+$sm:374px;
+$lg:900px;
+
+@mixin lg {
+	@media (min-width: ($lg)) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media (max-width:($sm)) {
+		@content;
+	}
+}
+
+//----------------------------
+// リセット
+//----------------------------
+body ,
+h1 ,
+h2 ,
+h3 ,
+h4 ,
+h5 ,
+h6 ,
+p ,
+ul ,
+figure {
+	margin:0;
+	padding:0;
+}
+
+//----------------------------
+// ベース・共通パーツ
+//----------------------------
+
+body {
+	color:$textColorBlack;
+	font-family:"Noto Sans JP", Arial, Helvetica, sans-serif;
+
+	-webkit-font-smoothing:subpixel-antialiased;
+	-moz-osx-font-smoothing:unset;
+}
+
+// 文字を見やすく
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 2dppx) {
+	body {
+		-webkit-font-smoothing:antialiased;
+		-moz-osx-font-smoothing:grayscale;
+	}
+}
+
+.container {
+	margin:0 auto;
+	width:84%;
+}
+
+@include lg {
+	.container {
+		max-width:1240px;
+		width:91%;
+	}
+}
+
+a {
+	color:inherit;
+	text-decoration:none;
+}
+
+a:hover {
+	opacity:0.8;
+}
+
+img {
+	max-width:100%;
+	height:auto;
+	vertical-align:bottom;
+}
+
+// ボタン
+//-----------------------------------
+.btn {
+	display:block;
+	box-sizing:border-box;
+	margin:0 auto;
+	padding:11px 11px 13px;
+	width:208px;
+	border:solid 2px currentColor;
+	border-radius:24px;
+	color:$textColorBlue;
+	text-align:center;
+	font-weight:bold;
+	font-size:16px;
+}
+
+// スクリーンリーダー用のテキスト非表示
+//-----------------------------------
+.scr-only {
+	position:absolute;
+	overflow:hidden;
+	clip:rect(0 0 0 0);
+	margin:-1px;
+	padding:0;
+	width:1px;
+	height:1px;
+	border:0;
+}
+
+//-----------------------------------
+// ヘッダー
+//-----------------------------------
+
+.header .container {
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	height:74px;
+}
+
+@include lg {
+	.header .container {
+		height:100px;
+	}
+}
+
+// ヘッダー：サイト名
+//-----------------------------------
+
+.site {
+	display:flex;
+	align-items:center;
+
+	img {
+		margin-right:10px;
+		width:42px;
+	}
+
+	.corp {
+		color:$textColorBlack;
+		font-weight:900;
+		font-size:12px;
+		line-height:1.4;
+	}
+
+	.desc {
+		color:$textColorGray;
+		font-size:10px;
+		line-height:1.4;
+	}
+}
+
+@include lg {
+	.site img {
+		margin-right:18px;
+		width:59px;
+	}
+
+	.site .corp {
+		font-size:20px;
+	}
+
+	.site .desc {
+		font-size:12px;
+	}
+}
+
+// ヘッダー：ナビボタン
+//-----------------------------------
+.nav-button {
+	box-sizing:content-box;
+	padding:0;
+	width:20px;
+	height:14px;
+	outline:none;
+	border:none;
+	background:none;
+	color:$colorBlue;
+	cursor:pointer;
+
+	&::before ,
+	&::after {
+		display:block;
+		height:2px;
+		background-color:currentColor;
+		content:"";
+		transition:0.3s ease-in-out;
+		transform:translateY(5px);
+	}
+
+	&::before {
+		box-shadow:0 6px currentColor;
+		transform:translateY(-5px);
+	}
+}
+
+
+
+
+// ヘッダー：ナビボタン：閉じる
+//-----------------------------------
+.open .nav-button {
+	z-index:1000;
+	color:$textColorWhite;
+
+	&::before {
+		box-shadow:none;
+		transform:translateY(1px) rotate(45deg);
+	}
+
+	&::after {
+		transform:translateY(-1px) rotate(-45deg);
+	}
+}
+
+// ヘッダー：ナビメニュー：SP
+//-----------------------------------
+@media (max-width: 899px) {
+	/* ブラウザのアドレスバー分の調整 */
+	html.open ,
+	.open body {
+		overflow:hidden;
+		height:100%;
+	}
+
+	.open .form {
+		display:none;
+	}
+
+	.open nav {
+		left:0;
+	}
+
+	html ,
+	body {
+		overflow-x:hidden;
+	}
+
+	.header {
+		position:relative;
+	}
+
+	.nav {
+		position:absolute;
+		top:0;
+		left:100%;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		width:100%;
+		height:100vh;
+		background:rgba(0, 0, 0, 0.8);
+		color:$textColorWhite;
+		transition:left 0.5s;
+
+		ul {
+			list-style:none;
+			text-align:center;
+			font-weight:bold;
+
+			li:not(:last-child) {
+				margin-bottom:40px;
+			}
+		}
+
+		.btn {
+			color:inherit;
+		}
+	}
+}
+
+// ヘッダー：ナビメニュー：PC
+//-----------------------------------
+@include lg {
+	.nav-button {
+		display:none;
+	}
+
+	.nav ul {
+		display:flex;
+		align-items:center;
+		color:$textColorBlack;
+		list-style:none;
+
+		li:not(:last-child) {
+			margin-right:23px;
+		}
+	}
+
+	.nav .btn {
+		width:148px;
+		border-color:#cdd6dd;
+	}
+}
+
+//-----------------------------------
+// ヒーロー
+//-----------------------------------
+.hero {
+	display:flex;
+	height:400px;
+	background-image:url(img/hero.jpg);
+	background-position:center;
+	background-size:cover;
+
+	.catch {
+		align-self:flex-end;
+		flex:auto;
+		padding:33px 0;
+		background-color:rgba(255, 255, 255, 0.76);
+	}
+
+	.container {
+		display:flex;
+		align-items:center;
+		flex-direction:column-reverse;
+		line-height:1.3;
+
+		img {
+			max-width:100%;
+			height:auto;
+			vertical-align:bottom;
+		}
+
+		p {
+			margin-bottom:15px;
+			color:$textColorBlue;
+			font-size:14px;
+		}
+	}
+}
+
+@include lg {
+	.hero {
+		height:700px;
+
+		.catch {
+			padding:47px 0 44px;
+		}
+
+		p {
+			margin-bottom:22px;
+			font-size:16px;
+		}
+	}
+}
+
+// ヒーロー：IE対応
+//-----------------------------------
+@media (-ms-high-contrast: none),
+not all and (-ms-high-contrast: none) {
+	.hero img {
+		max-width:637.78px;
+		width:calc((100vw - 17px) * 0.84);
+	}
+}
+
+
+//-----------------------------------
+// メッセージ
+//-----------------------------------
+.message {
+	padding:67px 0;
+	background-color:$colorBlue;
+	color:$textColorWhite;
+
+	h2 {
+		margin-bottom:38px;
+		text-align:center;
+		font-size:24px;
+		line-height:1.67;
+	}
+
+	p {
+		margin:auto;
+		max-width:640px;
+		font-size:14px;
+		line-height:1.86;
+	}
+}
+
+@include lg {
+	.message {
+		padding:81px 0;
+
+		h2 {
+			font-size:36px;
+			line-height:1.33;
+		}
+	}
+}
+
+@include sm {
+	.message h2 {
+		font-size:20px;
+	}
+}
+
+
+//-----------------------------------
+// サービス
+//-----------------------------------
+.service {
+	padding:67px 0;
+	text-align:center;
+
+	h2 {
+		display:inline-block;
+		margin-bottom:16px;
+		padding-bottom:9px;
+		border-bottom:dotted 2px currentColor;
+		color:$textColorBlue;
+		font-size:24px;
+	}
+
+	h2 + p {
+		color:$textColorBlue;
+		font-size:16px;
+	}
+}
+
+@include lg {
+	.service {
+		padding:95px 0 87px;
+
+		h2 {
+			font-size:36px;
+		}
+	}
+}
+
+// サービス：サービスの詳細
+//-----------------------------------
+.details {
+	margin-top:53px;
+	color:$textColorBlack;
+}
+
+.detail {
+	&:not(:last-child) {
+		margin-bottom:67px;
+	}
+
+	h3 {
+		margin-bottom:17px;
+		font-size:20px;
+		line-height:1.75;
+	}
+
+	p {
+		margin:0 auto 25px;
+		max-width:264px;
+		font-size:12px;
+		line-height:2;
+	}
+
+	figure {
+		margin-bottom:22px;
+		height:246px;
+		background-position:center;
+		background-size:cover;
+	}
+}
+
+
+.detail.office figure {
+	background-image:url(img/office.jpg);
+}
+
+.detail.manage figure {
+	background-image:url(img/manage.jpg);
+}
+
+.detail.research figure {
+	background-image:url(img/research.jpg);
+}
+
+@include lg {
+	.details {
+		display:flex;
+		margin-top:75px;
+	}
+
+	.detail {
+		flex:1;
+		margin-right:3.22%;
+
+		&:first-child {
+			margin-left:3.22%;
+		}
+
+		&:not(:last-child) {
+			margin-bottom:0;
+		}
+
+		h3 {
+			margin-bottom:26px;
+			font-size:30px;
+			line-height:1.4;
+		}
+
+		p {
+			max-width:none;
+			width:78%;
+		}
+
+		figure {
+			margin-bottom:33px;
+			height:360px;
+		}
+	}
+
+	/* ボタンのタテ位置を揃える */
+	.detail {
+		display:flex;
+		flex-direction:column;
+
+		.btn {
+			margin-top:auto;
+		}
+	}
+}
+
+
+//-----------------------------------
+// お問い合わせ
+//-----------------------------------
+.contact {
+	padding:62px 0;
+	background-color:$colorLightGray;
+	color:$textColorBlack;
+
+	h2 {
+		margin-bottom:42px;
+		font-size:24px;
+	}
+
+	h2 + p {
+		font-size:12px;
+		line-height:2.17;
+	}
+}
+
+@include lg {
+	.contact {
+		padding:0;
+		background:none;
+
+		.container {
+			display:flex;
+			justify-content:space-between;
+			box-sizing:border-box;
+			padding:96px 9% 62px;
+			background-color:$colorLightGray;
+		}
+
+		.text {
+			flex:0 0 auto;
+		}
+
+		.form {
+			flex:1 1 auto;
+			margin-top:0;
+			margin-left:1em;
+			max-width:457px;
+		}
+
+		h2 {
+			font-size:36px;
+		}
+
+		h2 + p {
+			font-size:14px;
+			line-height:1.86;
+		}
+	}
+}
+
+// お問い合わせ：フォーム
+//-----------------------------------
+.form {
+	margin-top:46px;
+}
+
+.form input[type="text"] ,
+.form input[type="email"] ,
+.form textarea {
+	box-sizing:border-box;
+	margin-bottom:17px;
+	padding:12px 20px 14px;
+	width:100%;
+	border:solid 1px #cdd6dd;
+	border-radius:0;
+	color:$textColorBlack;
+	font-size:16px;
+	font-family:"Noto Sans JP", sans-serif;
+
+	-webkit-appearance:none;
+}
+
+.form ::placeholder {
+	color:#cdd6dd;
+	opacity:1;
+}
+
+.form input:-ms-input-placeholder ,
+.form textarea:-ms-input-placeholder {
+	color:#cdd6dd;
+}
+
+.form textarea {
+	height:150px;
+}
+
+.form .btn {
+	margin:0;
+	width:100%;
+	border:none;
+	background-color:$colorBlue;
+	color:$textColorWhite;
+	cursor:pointer;
+
+	-webkit-appearance:none;
+
+	&:active {
+		outline:none;
+	}
+}
+
+@include lg {
+	.form .btn {
+		width:272px;
+	}
+}
+
+
+//-----------------------------------
+// フッター
+//-----------------------------------
+.footer {
+	padding:38px 0 56px;
+	background-color:$colorBlue;
+
+	.site img {
+		margin-right:14px;
+		width:47px;
+	}
+
+	.site .corp {
+		color:$textColorWhite;
+		font-size:16px;
+	}
+
+	.add {
+		margin:20px 0 36px 61px;
+		color:$textColorWhite;
+		font-size:12px;
+		line-height:2;
+	}
+
+	.sns {
+		display:flex;
+		margin-left:61px;
+		list-style:none;
+
+		li:not(:first-child) {
+			margin-left:25px;
+		}
+
+		img {
+			width:35px;
+		}
+	}
+}
+
+@include lg {
+	.footer {
+		position:relative;
+		z-index:-1;
+		margin-top:-48px;
+		padding:105px 0 88px;
+
+		.container {
+			display:flex;
+			justify-content:space-between;
+		}
+
+		.site img {
+			margin-right:18px;
+			width:59px;
+		}
+
+		.site .corp {
+			font-size:20px;
+		}
+
+		.add {
+			margin:22px 0 0 77px;
+		}
+
+		.sns {
+			align-items:center;
+			height:59px;
+		}
+	}
+}
+
+//-----------------------------------
+// アニメーション
+//-----------------------------------
+
+body {
+	animation:fade 3s ease-in-out;
+}
+
+@keyframes fade {
+	0% {
+		opacity:0;
+	}
+
+	100% {
+		opacity:1;
+	}
+}

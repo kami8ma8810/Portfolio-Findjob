@@ -1,0 +1,107 @@
+@media screen and (max-width: 950px) {
+	.main-contents {
+		width:95%;
+	}
+
+	.flex {
+		display:block;
+		width:100%;
+	}
+
+	.main-contents {
+		margin:0 auto;
+		width:95%;
+	}
+
+	.page-contents {
+		position:relative;
+		margin:0 auto 3em;
+		width:90%;
+		height:auto;
+	}
+
+	.sp-show {
+		display:block;
+	}
+
+	#top_scroll {
+		display:block;
+	}
+
+	#page-contents li .current {
+		background-color:#f9d535;
+	}
+}
+
+@media screen and (max-width: 560px) {
+	.main-contents {
+		width:95%;
+	}
+
+	.page-header {
+		font-size:16px;
+	}
+
+	section h1 {
+		padding:0.2em;
+		font-size:18px;
+	}
+
+	h2 {
+		margin-top:2em;
+		font-size:18px;
+	}
+
+	h3 {
+		margin-top:2em;
+		font-size:16px;
+	}
+
+	dd {
+		margin-left:20px;
+		padding-top:5px;
+		font-size:14px;
+	}
+
+	.box-blue {
+		margin:3em 0;
+		font-size:14px;
+	}
+
+	.box-title {
+		top:-10px;
+		font-size:16px;
+	}
+
+	.box-blue ul {
+		padding-left:1.5em;
+	}
+
+	.scope-figure ,
+	.domevent-figure {
+		width:100%;
+	}
+
+	.clip-box {
+		padding:15px 35px 15px 15px;
+		width:80%;
+	}
+
+	.cite {
+		font-size:10px;
+	}
+
+	.sp-show {
+		display:block;
+	}
+
+	.page-footer .cite {
+		font-size:8px;
+	}
+
+	#page-top1 {
+		bottom:10px;
+		width:40px;
+		height:40px;
+	}
+}

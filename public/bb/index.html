@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>BBアシスタントカンパニー</title>
+  <link rel="shortcut icon" href="img/bb.png" type="image/png">
+  <link rel="shortcut icon" href="img/bb.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="site">
+        <img src="img/bb.svg" alt="">
+        <div>
+          <p class="corp elem">BBアシスタントカンパニー</p>
+          <p class="desc">確かなスタッフによる業務サポート</p>
+        </div>
+      </div>
+      <!-- /.site -->
+
+      <nav class="nav">
+        <ul>
+          <li><a href="#message">会社情報</a></li>
+          <li><a href="#service">サービス</a></li>
+          <li><a href="#contact" class="btn">お問い合わせ</a></li>
+        </ul>
+      </nav>
+      <!-- /.nav -->
+
+      <button type="button" class="nav-button" onClick="navFunc()">
+        <span class="scr-only">MENU</span>
+      </button>
+    </div>
+    <!-- /.container -->
+  </header>
+  <!-- /.header -->
+
+  <section class="hero">
+    <div class="catch">
+      <div class="container">
+        <h1><img src="img/hero.svg" alt="BB Assistant Company"></h1>
+        <p>縁の下の力持ちとしてお仕事を支えます</p>
+      </div>
+    </div>
+    <!-- /.catch -->
+  </section>
+  <!-- /.hero -->
+
+  <section id="message" class="message">
+    <div class="container">
+      <h2>ビジネスアシスタントとして<br>サポートを続けて20年</h2>
+      <p>
+        プロのビジネスアシスタントとして独立後、さまざまなお客様からご依頼をいただき、多様な業務、事業、効率化などのサポートを行ってきました。得意分野が多岐にわたるスタッフが揃っていますので、必要に応じてどのような業務にも対応いたし、雑事に振り回されることなく、重要な案件に取り組んでいただくことを目指しています。
+      </p>
+    </div>
+  </section>
+  <!-- /.message -->
+
+  <section id="service" class="service">
+    <div class="container">
+      <h2>アシスタントサービス</h2>
+      <p>私達にできること</p>
+
+      <div class="details">
+        <!-- office -->
+        <article class="detail office">
+          <figure></figure>
+          <h3>オフィス業務<br>サポート</h3>
+          <p>書類管理、電話・メール応対、スケジュール管理、デジタルトランスフォーメーションなど、さまざまなオフィス業務のサポートを行います。</p>
+          <a href="#" class="btn">OFFICE</a>
+        </article>
+        <!-- /.office -->
+
+        <!-- manage -->
+        <article class="detail manage">
+          <figure></figure>
+          <h3>マネージメント<br>サポート</h3>
+          <p>プロジェクトチームの構成メンバーのマネージメント、案件の進捗管理、リーダーのアシスタントサポートなどを行います。</p>
+          <a href="#" class="btn">MANAGEMENT</a>
+        </article>
+        <!-- /.manage -->
+
+        <!-- research -->
+        <article class="detail research">
+          <figure></figure>
+          <h3>調査・研究<br>サポート</h3>
+          <p>各種事業の立ち上げ、運営にかかわる調査・研究のサポートや、特定分野の専門家との提携のお手伝いなどを行います。</p>
+          <a href="#" class="btn">RESEARCH</a>
+        </article>
+        <!-- /.research -->
+      </div>
+      <!-- /.details -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.service -->
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="text">
+        <h2>お問い合わせ</h2>
+        <p>もっと業務を効率化したい<br>
+          マネージメントの煩わしさから開放されたい<br>
+          本業に集中したいなどなど、<br>
+          些細なことでもお気軽にお問い合わせください。</p>
+      </div>
+      <!-- /.text -->
+
+      <form class="form">
+        <p>
+          <label>
+            <span class="src-only">名前</span>
+            <input type="text" name="name" placeholder="名前">
+          </label>
+        </p>
+        <p>
+          <label>
+            <span class="src-only">メールアドレス</span>
+            <input type="email" name="email" placeholder="メールアドレス">
+          </label>
+        </p>
+        <p>
+          <label>
+            <span class="src-only">メッセージ</span>
+            <textarea name="msg" placeholder="メッセージを入力してください"></textarea>
+          </label>
+        </p>
+        <p>
+          <input type="submit" value="送信" class="btn">
+        </p>
+      </form>
+      <!-- /.form -->
+    </div>
+    <!-- /.container -->
+  </section>
+  <!-- /.contact -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="info">
+        <div class="site">
+          <img src="img/bb-white.svg" alt="">
+          <div>
+            <p class="corp">BBアシスタントカンパニー</p>
+          </div>
+        </div>
+
+        <p class="add">
+          〒001-0001<br>
+          北海道中央区南53条東西ビル8F<br>
+          0001-1234-5678
+        </p>
+      </div>
+      <!-- /.info -->
+
+      <ul class="sns">
+        <li><a href="#"><img src="img/logo-twitter.svg" alt="Twitter"></a></li>
+        <li><a href="#"><img src="img/logo-facebook.svg" alt="Facebook"></a></li>
+        <li><a href="#"><img src="img/logo-instagram.svg" alt="Instagram"></a></li>
+      </ul>
+      <!-- /.sns -->
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- /.footer -->
+
+  <script>
+    // ナビゲーション
+    function navFunc() {
+      document.querySelector('html').classList.toggle('open');
+    }
+    // スムーススクロール
+    var Ease = {
+      easeInOut: t => t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+    }
+    var duration = 500;
+    window.addEventListener('DOMContentLoaded', () => {
+      var smoothScrollTriggers = document.querySelectorAll('a[href^="#"]');
+      smoothScrollTriggers.forEach(function (smoothScrollTrigger) {
+        smoothScrollTrigger.addEventListener('click', function (e) {
+          var href = smoothScrollTrigger.getAttribute('href');
+          var currentPostion = document.documentElement.scrollTop || document.body.scrollTop;
+          var targetElement = document.getElementById(href.replace('#', ''));
+          if (targetElement) {
+            e.preventDefault();
+            e.stopPropagation();
+            var targetPosition = window.pageYOffset + targetElement.getBoundingClientRect().top;
+            var startTime = performance.now();
+            var loop = function (nowTime) {
+              var time = nowTime - startTime;
+              var normalizedTime = time / duration;
+              if (normalizedTime < 1) {
+                window.scrollTo(0, currentPostion + ((targetPosition - currentPostion) *
+                  Ease.easeInOut(normalizedTime)));
+                requestAnimationFrame(loop);
+              } else {
+                window.scrollTo(0, targetPosition);
+              }
+            }
+            requestAnimationFrame(loop);
+          }
+        });
+      });
+    });
+
+  </script>
+</body>
+
+</html>

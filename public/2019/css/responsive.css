@@ -1,0 +1,261 @@
+@media only screen and (min-width: 768px) {
+
+  .navbar {
+    display: flex !important;
+    
+  }
+  .navbar li:first-child {
+    margin-right: auto;
+  }
+
+}
+
+@media (max-width: 769px) {
+
+  .scroll-wrap {
+    overflow: hidden;
+  }
+  h1 {
+    margin: 0 0 30px;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+
+
+  .header-container {
+    height: auto;
+  }
+  
+  
+  .site-title {
+    display: none;
+  }
+.nav-container {
+  display: none;
+}
+.navbar {
+  display: flex;
+  margin: 0;
+  height: 100px;
+  padding: 0 100px 0 15px;
+  list-style-type: none;
+  background: none;
+  text-align: center;
+ }
+ 
+ .nav-item a {
+   font-size: 2rem;
+   position: relative;
+   display: inline-block;
+   color: #fff;
+   text-decoration: none;
+   letter-spacing: 2px;
+   padding: 25px 10px 0;
+ }
+
+ .keyvisual {
+   margin: 0;
+   padding: 0;
+ }
+ .svg {
+   width:50%;
+   height: auto;
+ }
+ 
+/*==========work==========*/
+  .work-box {
+    width: 100%;
+  }
+  .work-item {
+    display: block!important;
+    width: 100%;
+    height: auto;
+  }
+  .work-item img {
+    width: 300px;
+    height: auto;
+    margin: 0;
+    border-radius: 5px;
+    transition: -webkit-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .modal-content {
+    width: 90%;
+    margin: 0;
+    text-align: center;
+    background: #eee;
+    position: fixed ;
+    display: none ;
+    z-index: 1200 ;
+    padding: 1em;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  .modal-t-img,
+  .modal-tl-img {
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+  }
+
+  .modal-org-img {
+    width: 300px;
+    height: auto;
+    margin-top:0;
+  }
+  .note p {
+    text-align:start; 
+    margin-left:0;
+  }
+
+
+  
+
+  .card-container {
+    display: block!important;
+    margin: 0 auto;
+  }
+  .card {
+    display: block!important;
+    width: 300px;
+    height: auto;
+    margin: 20px auto;
+    padding: 0;
+  }
+.about-container {
+  margin: 50px 0;
+}
+
+.card-text {
+  font-size: 1.1rem;
+}
+
+  .rsp-hidden {
+    display: none;
+  }
+  .rsp {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  }
+
+  .slf-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+
+  .contact {
+    background: #FFF4E0 url('../images/index_bg022a.jpg') repeat-y fixed;
+    background-size: 100% auto;
+    width: 100%;
+  }
+
+  .contact-form {
+    width: 80%;
+    margin: 50px auto 0;
+  }
+  
+  .contact-form textarea {
+    height: 400px;
+  }
+  
+
+
+
+
+
+
+
+
+
+  .main-container {
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  
+.button {
+  display: inline-block;
+  width: 70%;
+  height: 60px;
+  font-size: 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  line-height: 60px;
+  outline: none;
+  background-color: #252525;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 0 5px 0 0 #838383;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+
+
+/*====================ページトップへ戻るボタン====================*/
+#page_top{
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  right: 5px;
+  bottom: -200px;
+  background: #F99292;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 70px;
+  height: 70px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: FontAwesome;
+  content: '\f102';
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: -10px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+#page_top a::after{
+  content: 'top';
+  font-size: 1.7rem;
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+
+
+
+}
+
+

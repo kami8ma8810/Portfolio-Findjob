@@ -1,0 +1,59 @@
+html ,
+body ,
+div ,
+header ,
+section ,
+p ,
+span ,
+form ,
+button ,
+ul ,
+li ,
+h1 ,
+h2 ,
+h3 {
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+html {
+	font-size:62.5%;
+}
+
+body {
+	width:100%;
+	background:#f9f9f9;
+	color:#333333;
+	font-size:1.6rem;
+	line-height:1.7;
+}
+
+@media screen and (max-width: 650px) {
+	body {
+		font-size:1.4rem;
+		line-height:1.5;
+	}
+}
+
+img {
+	        box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	max-width:100%;
+	vertical-align:bottom;
+}
+
+strong ,
+b {
+	font-weight:700;
+}
+
+code {
+	overflow-x:scroll;
+}
+
+pre ,
+code {
+	        box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}

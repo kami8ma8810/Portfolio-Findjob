@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slickデモ</title>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+  <style type="text/css">
+h1 ,
+p {
+	text-align:center;
+}
+
+.slider {
+	margin:0 auto;
+	width:320px;
+}
+
+.slick-slide {
+	margin:0 20px;
+}
+
+.slick-slide img {
+	width:100%;
+}
+
+.slick-prev:before ,
+.slick-next:before {
+	color:black;
+}
+
+  </style>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+</head>
+
+<body>
+  <h1>slickデモページ</h1>
+  <section id="cats" class="slider">
+    <div>
+      <img src="cat1.jpg" alt="" width="300" height="225">
+    </div>
+    <div>
+      <img src="cat2.jpg" alt="" width="300" height="225">
+    </div>
+    <div>
+      <img src="cat3.jpg" alt="" width="300" height="225">
+    </div>
+  </section>
+  <p><a href="./index.html">トップページへ戻る</a></p>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script>
+    $(function () {
+      $("#cats").slick({
+        dots: true, // スライダー切り替えのドット
+        infinite: true, // 無限にスクロールするか？
+        autoplay: true, // 自動再生するか？
+        accessibility: true, // 左右のボタンでスライダーを切り替えるか？
+      });
+    });
+  </script>
+</body>
+
+</html>

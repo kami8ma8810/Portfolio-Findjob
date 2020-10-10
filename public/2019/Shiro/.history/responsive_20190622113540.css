@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700');
+
+@media screen and (max-width: 960px) {
+  .u-content-wrapper {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .work_contents {
+    display: block;
+    height: auto;
+  }
+
+  .work_content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .work_content:nth-child(3) {
+    margin-top: 0;
+  }
+
+
+}
+
+
+@media screen and (max-width: 767px) {
+
+  .u-content-wrapper {
+    width: 95%;
+  }
+
+  .header_title {
+    font-size: 7rem;
+  }
+
+  .header_title_sub {
+    word-spacing: 2px;
+    font-size: 1.4rem;
+  }
+
+  .header_title_sub::before,
+  .header_title_sub::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    border-radius: 5px;
+    height: 1px;
+    margin: 0 8px;
+    background: #fff;
+    vertical-align: middle;
+    -webkit-border-radius: ;
+    -moz-border-radius: ;
+    -ms-border-radius: ;
+    -o-border-radius: ;
+  }
+
+  .work br {
+    display: none;
+  }
+
+  .florist {
+    height: auto;
+    background: linear-gradient(#ededed 20%, #fff 80%);
+  }
+
+  .florist_contents {
+    display: block;
+    height: auto;
+  }
+
+  .florist_content {
+    width: 100%;
+    padding-bottom: 120px;
+  }
+
+  .florist_content_img {
+    margin-bottom: 8px;
+  }
+
+
+
+
+
+
+  .shopInformation_contents {
+    display: block;
+  }
+
+  .gmap {
+    width: 100%;
+    padding-top: 62%;
+    position: relative;
+  }
+
+  .gmap iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .shopInformation_table {
+    width: 100%;
+    border-spacing: 10px;
+  }
+
+
+  .shopInformation_table_heading {
+    width: 25%;
+    border-right: 1px solid #a0a0a0;
+    font-weight: lighter;
+  }
+
+}

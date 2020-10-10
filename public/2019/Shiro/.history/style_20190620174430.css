@@ -1,0 +1,342 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700');
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  color: #2b2b2b;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  color: #2b2b2b;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+section {
+  text-align: center;
+}
+
+.u-content-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+
+/*====================header====================*/
+.header {
+  position: relative;
+  width: 100%;
+  height: 620px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url('img/header.png');
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+}
+
+.header_nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: #2b2b2b;
+}
+
+.hidden {
+  background: none;
+  transition: all 0.7s ease;
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 0.7s ease;
+  -ms-transition: all 0.7s ease;
+  -o-transition: all 0.7s ease;
+}
+
+.header_nav_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_nav_logo a {
+  font-size: 3.2rem;
+  color: #fff;
+  margin-left: 20px;
+}
+
+.hamburger-menu {
+  position: relative;
+  width: 32px;
+  height: 64px;
+  cursor: pointer;
+  margin-right: 20px;;
+}
+
+.hamburger-menu_line,
+.hamburger-menu_line::before,
+.hamburger-menu_line::after {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: #fff;
+}
+
+.hamburger-menu_line::before,
+.hamburger-menu_line::after {
+  content: "";
+}
+
+.hamburger-menu_line {
+  top: 50%;
+}
+
+.hamburger-menu_line::before {
+  top: calc(50% - 8px);
+}
+
+.hamburger-menu_line::after {
+  top: calc(50% + 8px);
+}
+
+.header_title {
+  padding-top: 240px;
+  font-size: 10rem;
+  font-weight: normal;
+}
+
+.header_title_sub {
+  word-spacing: 4px;
+}
+
+.header_title_sub::before,
+.header_title_sub::after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 2px;
+  margin: 0 8px;
+  background: #fff;
+  vertical-align: middle;
+}
+
+.u-heading {
+  position: relative;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  font-size: 3.6rem;
+  letter-spacing: 2px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.u-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 40px;
+  height: 1px;
+  background: #2b2b2b;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.u-text {
+  padding-bottom: 40px;
+  line-height: 1.8;
+  letter-spacing: 1.4px;
+}
+
+/*====================concept====================*/
+
+.concept {
+  width: 100%;
+  padding: 80px 0;
+  background: linear-gradient(#fff 70%, #ededed 30%);
+}
+
+.concept_img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+
+/*====================work====================*/
+
+.work {
+  width: 100%;
+  padding: 80px 0 0;
+}
+
+.work_contents {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: 1680px;
+  width: 100%;
+}
+
+.work_content {
+  width: 420px;
+  padding-bottom: 80px;
+  text-align: left;
+  line-height: 1.8;
+}
+
+.work_content:nth-child(3) {
+  margin-top: 120px;
+}
+
+.work_content_img {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.work_content_text {
+  letter-spacing: 1.5px;
+}
+
+
+/*====================work====================*/
+
+.florist {
+  width: 100%;
+  padding: 80px 0 0;
+  height: 650px;
+  background: linear-gradient(#ededed 60%, #fff 40%);
+}
+
+.florist_contents {
+  display: flex;
+  justify-content: space-between;
+  height: 380px;
+}
+
+.florist_content {
+  width: 300px;
+  padding-bottom: 40px;
+  text-align: left;
+  line-height: 1.8;
+}
+
+.florist_content_img {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.florist_content_introduce {
+  font-size: 1.6rem;
+  letter-spacing: 1.5px;
+}
+
+
+/*====================shop information====================*/
+
+.shop-information {
+  width: 100%;
+  padding: 80px 0 120px;
+}
+
+.shopInformation_contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shopInformation_img {
+  width: 50%;
+}
+
+tbody {
+  vertical-align: inherit;
+}
+
+.shopInformation_table {
+  width: 45%;
+  border-spacing: 16px;
+  text-align: left;
+  letter-spacing: 1.5px;
+  line-height: 2;
+  font-family: 'Poppins', sans-serif;
+}
+
+.shopInformation_table_heading {
+  width: 25%;
+  border-right: 1px solid #a0a0a0;
+  font-weight: lighter;
+}
+
+.holiday_color {
+  color: crimson;
+}
+
+/*====================contact====================*/
+
+.contact {
+  width: 100%;
+  padding: 80px 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    url(img/contact_us.png);
+  background-size: cover;
+}
+
+.btn_contact {
+  position: relative;
+  display: inline-block;
+  width: 360px;
+  height: 80px;
+  line-height: 80px;
+  letter-spacing: 2px;
+  border: 1px solid #a0a0a0;
+  background: #fff;
+  font-size: 2rem;
+  text-align: center;
+}
+
+
+
+/*====================footer====================*/
+footer {
+  text-align: center;
+}
+
+.footer_copyright {
+  line-height: 40px;
+  letter-spacing: 1.4px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}

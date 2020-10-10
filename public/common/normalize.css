@@ -1,0 +1,42 @@
+html ,
+body ,
+div ,
+header ,
+section ,
+p ,
+span ,
+form ,
+button ,
+pre ,
+code {
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+html {
+	font-size:62.5%;
+}
+
+body {
+	min-width:1000px;
+	background:#f9f9f9;
+	color:#333333;
+	line-height:1.7;
+}
+
+@media screen and (max-width:650px) {
+	body {
+		min-width:100%;
+	}
+}
+
+img {
+	max-width:100%;
+	vertical-align:bottom;
+}
+
+strong ,
+b {
+	font-weight:700;
+}

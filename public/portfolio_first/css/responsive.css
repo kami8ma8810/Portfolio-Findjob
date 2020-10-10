@@ -1,0 +1,103 @@
+/*メディアクエリ*/
+
+@media only screen and (min-width: 768px) {
+  
+    .hamburger,
+    .header-logo {
+    display: none;
+  }
+  /*--閉じるボタンアニメーション
+.menu-trigger,
+.menu-trigger span {
+  display: none;
+  }*/
+  
+  
+  
+  .navbar {
+    display: flex !important;
+    justify-content: flex-end;
+  }
+	.navbar li {
+		flex: 1 1 auto;
+		text-align: center;
+	}
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.3rem;
+  }
+  
+  
+  .about br {
+    display: none;
+  }
+  .heading {
+    margin-top: 20px;
+    font-size: 2.5rem;
+  }
+  .button:hover {
+    opacity: 1;
+  }
+
+  .header {
+    padding-top: 90px;
+  }
+  
+ .site-title {
+    font-size: 3.2rem;
+    margin-top: 35px;
+    letter-spacing: 10px;
+  }
+
+  .site-discription {
+    font-size: 2.0rem;
+  }
+
+  .about-text {
+    line-height: 1.8;
+  }
+
+  .works-wrapper,
+  .work-box {
+    display: block;
+  }
+  .work-image {
+    display: block;
+    width: 70%;
+    margin: 50px auto 0;
+  }
+  .work-description {
+    position: relative;
+  }
+  .work-box::after {
+    top: 0;
+    height: 100%;
+    background-size: cover;
+    transform: none;
+  }
+
+  .skills-wrapper,
+  .skill-box {
+    display: block;
+  }
+  
+  .skill-box {
+    margin: 60px 0;
+  }
+  
+  .skill-icon {
+    font-size: 5rem;
+    padding-top: 45px;
+  }
+  .skill-text {
+    margin: 0;
+  }
+  .contact {
+    padding-bottom: 80px;
+  }
+  .contact-form {
+    width: 80%;
+  }
+}
